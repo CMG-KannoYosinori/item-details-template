@@ -152,35 +152,3 @@
     // }
   }
 }
-
-.p15403-p-line-up__button {
-  max-width: 420px;
-  margin-top: 32px;
-  margin-right: auto;
-  margin-left: auto;
-  font-family: 'Noto Sans JP', sans-serif;
-  line-height: 1.375;
-
-  @include c-btn(#c1161a, #fff, 6rem);
-}
-
-.p15403-p-line-up__button-2 {
-  margin-right: auto;
-  margin-left: auto;
-
-  @include c-btn-2(#e50213, #fff, 320px, 50px, 9999px);
-}
-
-.p15403-p-line-up__button-3 {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  max-width: 360px;
-  height: 48px;
-  margin-right: auto;
-  margin-left: auto;
-  font-weight: bold;
-  color: #fff;
-  background-color: #666;
-  border-radius: 4px;
-}
