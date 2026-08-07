@@ -8,14 +8,14 @@ yarn
 
 ```shell
 # yarn parcel src/index.html
-yarn parcel src/15403.html
+yarn parcel src/00000.html
 ```
 
 ソースマップが不要なときは
 
 ```shell
-yarn parcel src/15403.html --no-source-maps
-yarn parcel src/15403.html src/15403.html --no-source-maps
+yarn parcel src/00000.html --no-source-maps
+yarn parcel src/00000.html src/00000.html --no-source-maps
 ```
 
 # 開発手順
