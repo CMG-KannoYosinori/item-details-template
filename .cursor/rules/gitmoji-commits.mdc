@@ -38,7 +38,7 @@ alwaysApply: true
 ```
 🎉 商品詳細テンプレートと.gitignoreを追加
 🔥 不要な商品画像を削除
-🚚 ディレクトリ名をtemplate-details-moratameに変更
+🚚 ディレクトリ名を00000htmlに変更
 ```
 
 ## 注意
