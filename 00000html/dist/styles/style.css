@@ -1110,6 +1110,18 @@
   border: 4px solid #fff;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.35);
 }
+.p15403 .p15403-p-feature-2__heading {
+  margin-bottom: 32px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+}
+@media (width >= 640px) {
+  .p15403 .p15403-p-feature-2__heading {
+    font-size: 30px;
+  }
+}
 .p15403 .p15403-p-allergy {
   margin-top: 32px;
   font-size: 12px;
