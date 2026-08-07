@@ -1,0 +1,40 @@
+/* 冷凍、冷蔵便の注意書きについて */
+
+.attention_wrap {
+  padding-top: 10px;
+}
+
+.attention_border {
+  padding: 10px;
+  background: url('https://image.moratame.net/images/detail/do_house/0000stock/100802_0002.gif');
+  border: 1px solid #c00;
+}
+
+.attention_inner {
+  padding: 10px 20px;
+  background: #fff;
+}
+
+.attention_inner h6.attention_header {
+  margin-bottom: 10px;
+  font-size: 116%;
+  color: #c00;
+  text-align: center;
+  border-bottom: 1px solid #c00;
+}
+
+.attention_inner p.attention_pragraph {
+  color: #c00;
+}
+
+.attention_inner li.attention_list {
+  padding-left: 1em;
+  margin-bottom: 0.5em;
+  color: #c00;
+  text-indent: -1em;
+  border-bottom: 1px dotted #ccc;
+}
+
+.attention_inner span.atttetion_link_arrow {
+  color: #f60;
+}

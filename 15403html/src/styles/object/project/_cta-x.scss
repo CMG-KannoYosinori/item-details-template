@@ -1,0 +1,178 @@
+.p-cta-x {
+  padding: 32px 16px 48px;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-feature-settings: 'palt';
+  line-height: 1.5;
+  color: #151515;
+  text-align: justify;
+  letter-spacing: 0.1em;
+  background-color: #f9f5ec;
+  background-image: repeating-linear-gradient(135deg, transparent, transparent 8px, #f7f1e6 8px, #f7f1e6 26px);
+  background-size: auto auto;
+  border: 5px solid #a27217;
+}
+
+@media screen and (width >= 638px) {
+  .p-cta-x {
+    padding: 32px 32px 48px;
+  }
+}
+
+.p-cta-x__description {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.p-cta-x__heading {
+  max-width: calc(754px / 2);
+  margin: -16px auto 16px;
+}
+
+.p-cta-x__heading img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.p-cta-x__balloon {
+  position: relative;
+  width: calc(100% - 64px);
+  padding: 16px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: 0;
+  font-weight: bold;
+  color: #e74224;
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.p-cta-x__balloon::after {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  content: '';
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+  border-width: 6px 0 6px 10px;
+  transform: rotate(0deg);
+}
+
+.p-cta-x__balloon::before {
+  position: absolute;
+  top: 0;
+  right: -60px;
+  bottom: 0;
+  width: calc(76px / 2);
+  height: calc(200px / 2);
+  margin-top: auto;
+  margin-bottom: auto;
+  content: '';
+  background-image: url('https://image.moratame.net/images/detail/12466/images/12466-pocke.png');
+  background-repeat: no-repeat;
+  background-size: calc(76px / 2);
+}
+
+.p-cta-x__lead {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #a27217;
+  text-align: center;
+}
+
+.p-cta-x__hashtags {
+  padding: 8px 0 16px;
+  margin-top: 16px;
+  font-weight: bold;
+  line-height: 1.75;
+  color: #333;
+  text-align: center;
+  background-color: #ede2cc;
+}
+
+.p-cta-x__hashtag {
+  display: inline-block;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.375;
+}
+
+.p-cta-x__button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 200px;
+  height: 44px;
+  margin: auto;
+  margin-top: 32px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #1d9bf0;
+  border-radius: 9999px;
+  box-shadow: 0 4px 0 rgb(0 0 0 / 20%);
+  transition: 0.2s;
+}
+
+@media screen and (width >= 638px) {
+  .p-cta-x__button {
+    width: 250px;
+    height: 50px;
+  }
+}
+
+.p-cta-x__button:active {
+  box-shadow: none;
+  opacity: 1;
+  transform: translateY(4px);
+}
+
+.p-cta-x__button::after {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 0;
+  height: 0;
+  margin-top: -5px;
+  content: '';
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+  border-width: 5px 0 5px 6px;
+  transform: rotate(0deg);
+}
+
+.u-cta-x__hidden--sp {
+  display: none;
+}
+
+@media screen and (width >= 638px) {
+  .p-cta-x__balloon {
+    width: fit-content;
+    margin-left: auto;
+  }
+
+  .p-cta-x__hashtags {
+    padding: 8px 32px 16px;
+  }
+
+  .p-cta-x__hashtag {
+    font-size: 16px;
+  }
+
+  .u-cta-x__hidden--sp {
+    display: block;
+  }
+
+  .u-cta-x__hidden--pc {
+    display: none;
+  }
+}

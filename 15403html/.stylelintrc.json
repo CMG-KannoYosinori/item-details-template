@@ -1,0 +1,25 @@
+{
+  "plugins": [
+    "stylelint-prettier"
+  ],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss",
+    "stylelint-config-recess-order"
+  ],
+  "rules": {
+    "prettier/prettier": true,
+    "rule-empty-line-before": null,
+    "selector-class-pattern": null,
+    "number-max-precision": null,
+    "no-invalid-position-at-import-rule": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind"
+        ]
+      }
+    ]
+  }
+}

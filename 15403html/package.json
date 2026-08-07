@@ -1,0 +1,51 @@
+{
+  "name": "wrk-html-npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "volta": {
+    "node": "18.16.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postcss": "postcss tmp/styles/*.css --dir dist/styles",
+    "watch:tailwind": "npx tailwindcss -i ./src/styles/tailwind.css -o ./dist/styles/tailwind.css --watch",
+    "watch:sass": "sass --no-source-map --watch src/styles/:dist/styles/",
+    "watch": "run-p watch:tailwind watch:sass",
+    "format:eslint": "eslint dist/**/*.js --fix",
+    "format:prettier": "prettier --write dist/**/*.js",
+    "format:stylelint:sass": "stylelint 'src/**/*.scss' --fix",
+    "format": "npm run format:eslint && npm run format:prettier && npm run format:stylelint:sass",
+    "build:tailwindcss": "npx tailwindcss -i ./src/styles/tailwind.css -o ./src/styles/_tailwindcss.scss",
+    "build:sass": "sass --no-source-map src/styles/:dist/styles",
+    "build": "npm run build:tailwindcss && npm run format && npm run build:sass && rm dist/styles/tailwind.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "globals": "^16.2.0",
+    "lint-staged": "^13.2.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.18",
+    "postcss-cli": "^10.0.0",
+    "prettier": "^2.8.8",
+    "sass": "^1.62.1",
+    "stylelint": "^15.6.2",
+    "stylelint-config-recess-order": "^4.0.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-config-standard-scss": "^9.0.0",
+    "stylelint-prettier": "^3.0.0",
+    "stylelint-scss": "^5.0.0",
+    "tailwindcss": "^3.1.7"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

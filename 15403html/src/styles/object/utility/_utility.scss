@@ -1,0 +1,75 @@
+&-u-br {
+  &::before {
+    white-space: pre;
+    content: '\A';
+  }
+
+  &--clear {
+    &::before {
+      content: '';
+    }
+  }
+}
+
+.pc\:p15403-u-br {
+  @media (width >=640px) {
+    &::before {
+      white-space: pre;
+      content: '\A';
+    }
+  }
+}
+
+.pc\:p15403-u-br--clear {
+  @media (width >=640px) {
+    &::before {
+      content: '';
+    }
+  }
+}
+
+&-u-va_sub {
+  vertical-align: sub;
+}
+
+&-u-va_sup {
+  vertical-align: super;
+}
+
+&-u-noto-serif {
+  font-family: 'Noto Serif JP', serif;
+}
+
+.p-10662-u-indent {
+  display: block;
+  margin-left: 1em;
+  text-indent: -1em;
+}
+
+.p-10662-u-text--rosehip {
+  color: #d93049;
+}
+
+.p-10662-u-text--amani {
+  color: #d93049;
+}
+
+.p-10662-u-note {
+  font-size: 10px;
+  font-weight: normal;
+  text-align: right;
+
+  @media (width >=640px) {
+    font-size: 12px;
+  }
+}
+
+.p15403-u-sup {
+  position: relative;
+  top: -0.1em;
+
+  // font-size: 70%;
+
+  font-size: 10px;
+  vertical-align: top;
+}

@@ -1,0 +1,84 @@
+@use 'sass:math';
+@import 'object/utility/font-family';
+
+.p15403 {
+  box-sizing: border-box;
+  max-width: 640px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @import 'object/component/accordion';
+  @import 'object/component/mixins';
+  @import 'object/component/table';
+  @import 'foundation/variable';
+  @import 'foundation/base';
+
+  // @import 'object/component/component';
+
+  @import 'object/project/attention';
+  @import 'object/project/cta';
+  @import 'object/project/cta-x';
+  @import 'object/project/delivering-items';
+  @import 'object/project/js-accordion';
+  @import 'object/project/project';
+  @import 'object/utility/utility';
+  @import 'object/utility/youtube-wrapper';
+  @import 'tailwindcss';
+
+  &-title {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 14px;
+    color: #000;
+    text-align: center;
+    text-shadow: none;
+    background: inherit;
+  }
+}
+
+.bootstrap-v3-3-7--scope figure.p15403-mt-2 {
+  margin-top: 0.5rem;
+}
+
+.bootstrap-v3-3-7--scope figure.p15403-mt-4 {
+  margin-top: 1rem;
+}
+
+.bootstrap-v3-3-7--scope figure.p15403-mt-5 {
+  margin-top: 1.25rem;
+}
+
+.bootstrap-v3-3-7--scope figure.p15403-mt-6 {
+  margin-top: 1.5rem;
+}
+
+.bootstrap-v3-3-7--scope figure.p15403-mt-8 {
+  margin-top: 2rem;
+}
+
+.bootstrap-v3-3-7--scope figure.p15403-mb-8 {
+  margin-bottom: 2rem;
+}
+
+div.content h2.p15403-text-xl {
+  font-size: 1.25rem;
+}
+
+div.content h2.p15403-text-2xl {
+  font-size: 1.5rem;
+}
+
+.ui-mobile a img.p15403-border-4 {
+  border-width: 4px;
+}
+
+.ui-mobile a img.p15403-border-8 {
+  border-width: 8px;
+}
+
+.bootstrap-v3-3-7--scope .p15403 a:focus {
+  outline: unset;
+  outline-offset: unset;
+}

@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+sub,
+sup {
+  font-size: 10px;
+
+  @media (width >=640px) {
+    font-size: 12px;
+  }
+}
+
+sub {
+  vertical-align: sub;
+}
+
+sup {
+  position: relative;
+  top: -0.5em;
+}
+
+a {
+  transition: 0.5s ease;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
