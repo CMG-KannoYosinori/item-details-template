@@ -6,8 +6,6 @@
   max-width: 640px;
   margin-right: auto;
   margin-left: auto;
-  /* 冷凍、冷蔵便の注意書きについて */
-  /* @tailwind base; */
 }
 .p15403 .p15403-accordion-details {
   line-height: 1.5;
@@ -116,6 +114,9 @@
 }
 .p15403 a:hover {
   opacity: 0.7;
+}
+.p15403 {
+  /* 冷凍、冷蔵便の注意書きについて */
 }
 .p15403 .attention_wrap {
   padding-top: 10px;
@@ -1282,6 +1283,9 @@
   height: 100%;
   border: none;
 }
+.p15403 {
+  /* @tailwind base; */
+}
 .p15403 .p15403-mx-auto {
   margin-right: auto;
   margin-left: auto;
@@ -1349,47 +1353,47 @@
 }
 .p15403 .p15403-border-black {
   --tw-border-opacity: 1;
-  border-color: rgb(0 0 0/var(--tw-border-opacity));
+  border-color: rgb(0, 0, 0, var(--tw-border-opacity));
 }
 .p15403 .p15403-border-gray-500 {
   --tw-border-opacity: 1;
-  border-color: rgb(107 114 128/var(--tw-border-opacity));
+  border-color: rgb(107, 114, 128, var(--tw-border-opacity));
 }
 .p15403 .p15403-border-red-500 {
   --tw-border-opacity: 1;
-  border-color: rgb(239 68 68/var(--tw-border-opacity));
+  border-color: rgb(239, 68, 68, var(--tw-border-opacity));
 }
 .p15403 .p15403-border-white {
   --tw-border-opacity: 1;
-  border-color: rgb(255 255 255/var(--tw-border-opacity));
+  border-color: rgb(255, 255, 255, var(--tw-border-opacity));
 }
 .p15403 .p15403-bg-\[\#0f55bd\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(15 85 189/var(--tw-bg-opacity));
+  background-color: rgb(15, 85, 189, var(--tw-bg-opacity));
 }
 .p15403 .p15403-bg-\[\#f2dd6c\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(242 221 108/var(--tw-bg-opacity));
+  background-color: rgb(242, 221, 108, var(--tw-bg-opacity));
 }
 .p15403 .p15403-bg-black {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0/var(--tw-bg-opacity));
+  background-color: rgb(0, 0, 0, var(--tw-bg-opacity));
 }
 .p15403 .p15403-bg-gray-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246/var(--tw-bg-opacity));
+  background-color: rgb(243, 244, 246, var(--tw-bg-opacity));
 }
 .p15403 .p15403-bg-gray-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219/var(--tw-bg-opacity));
+  background-color: rgb(209, 213, 219, var(--tw-bg-opacity));
 }
 .p15403 .p15403-bg-red-50 {
   --tw-bg-opacity: 1;
-  background-color: rgb(254 242 242/var(--tw-bg-opacity));
+  background-color: rgb(254, 242, 242, var(--tw-bg-opacity));
 }
 .p15403 .p15403-bg-yellow-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(254 249 195/var(--tw-bg-opacity));
+  background-color: rgb(254, 249, 195, var(--tw-bg-opacity));
 }
 .p15403 .p15403-px-2 {
   padding-right: 0.5rem;
@@ -1450,15 +1454,15 @@
 }
 .p15403 .p15403-text-gray-700 {
   --tw-text-opacity: 1;
-  color: rgb(55 65 81/var(--tw-text-opacity));
+  color: rgb(55, 65, 81, var(--tw-text-opacity));
 }
 .p15403 .p15403-text-red-500 {
   --tw-text-opacity: 1;
-  color: rgb(239 68 68/var(--tw-text-opacity));
+  color: rgb(239, 68, 68, var(--tw-text-opacity));
 }
 .p15403 .p15403-text-white {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255/var(--tw-text-opacity));
+  color: rgb(255, 255, 255, var(--tw-text-opacity));
 }
 @media (width >= 640px) {
   .p15403 .pc\:p15403-mt-8 {

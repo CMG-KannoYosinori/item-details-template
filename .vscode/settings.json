@@ -5,12 +5,12 @@
     {
       "format": "expanded",
       "extensionName": ".css",
-      "savePath": "/dist/styles"
+      "savePath": "/00000html/dist/styles"
     }
   ],
   "liveSassCompile.settings.generateMap": false,
   "liveSassCompile.settings.includeItems": [
-    "/src/styles/style.scss"
+    "/00000html/src/styles/style.scss"
   ],
   "liveSassCompile.settings.excludeList": [
     "**/node_modules/**",
