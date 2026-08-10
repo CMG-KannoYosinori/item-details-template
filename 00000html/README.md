@@ -252,7 +252,3 @@ Live Sass の出力に Sass `@import` 非推奨の警告が出ることがあり
 ```
 ® → &#174;
 ```
-
-### Tailwind について
-
-一部ユーティリティは `_tailwindcss.scss` 経由で `style.css` に含まれます。通常は追加の `tailwind.css` 読み込みは不要です。

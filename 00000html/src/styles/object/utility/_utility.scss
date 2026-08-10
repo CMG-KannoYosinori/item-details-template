@@ -3,16 +3,16 @@
   display: none;
 }
 
-// pcのみ表示
-// pc:p00000-hidden
+// PC のみ非表示
 .pc\:p00000-hidden {
-  @media (width >=640px) {
+  @media (width >= 640px) {
     display: none;
   }
 }
 
-.pc\:.p00000-inline {
-  @media (width >=640px) {
+// PC のみ表示（インライン）
+.pc\:p00000-inline {
+  @media (width >= 640px) {
     display: inline;
   }
 }
@@ -39,22 +39,27 @@
 
 .p00000-u-indent {
   margin: 0;
+
   &.p00000-u-indent--07 {
     padding-left: 0.7em;
     text-indent: -0.7em;
   }
+
   &.p00000-u-indent--10 {
     padding-left: 1em;
     text-indent: -1em;
   }
+
   &.p00000-u-indent--11 {
     padding-left: 1.1em;
     text-indent: -1.1em;
   }
+
   &.p00000-u-indent--19 {
     padding-left: 1.9em;
     text-indent: -1.9em;
   }
+
   &.p00000-u-indent--22 {
     padding-left: 2.2em;
     text-indent: -2.2em;
