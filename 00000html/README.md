@@ -89,7 +89,7 @@
 | Layout     | `l-`   | 余白・幅などのレイアウト     | `p00000-l-container`                                   |
 | Component  | `c-`   | 再利用できる UI 部品         | `p00000-c-box`, `p00000-c-heading`, `p00000-c-allergy` |
 | Project    | `p-`   | その商品ページ固有のブロック | `p00000-p-main`, `p00000-p-section`                    |
-| Utility    | `u-`   | 単機能ヘルパー               | `p00000-u-font-noto-serif-jp`                          |
+| Utility    | `u-`   | 単機能ヘルパー               | `p00000-u-font-noto-serif-jp`, `p00000-u-text-center`  |
 
 ### どこを編集するか
 
@@ -203,6 +203,7 @@ https://<owner>.github.io/item-details-template/
 - `c-box` … 白ボックス（Component）
 - `c-heading` … 共通見出し（Component）
 - `u-font-*` … フォント指定（Utility）
+- `u-text-center` … 中央寄せ（Utility）
 
 ### ぶら下がりインデント（ご注意点など）
 
