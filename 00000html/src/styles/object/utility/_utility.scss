@@ -23,3 +23,35 @@
 .p00000-u-font-m-plus-rounded-1c {
   font-family: 'M PLUS Rounded 1c', sans-serif;
 }
+
+.p00000-u-sup {
+  position: relative;
+  top: -1em;
+  font-size: 0.5em;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+.p00000-u-indent {
+  margin: 0;
+  &.p00000-u-indent--07 {
+    padding-left: 0.7em;
+    text-indent: -0.7em;
+  }
+  &.p00000-u-indent--10 {
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+  &.p00000-u-indent--11 {
+    padding-left: 1.1em;
+    text-indent: -1.1em;
+  }
+  &.p00000-u-indent--19 {
+    padding-left: 1.9em;
+    text-indent: -1.9em;
+  }
+  &.p00000-u-indent--22 {
+    padding-left: 2.2em;
+    text-indent: -2.2em;
+  }
+}
