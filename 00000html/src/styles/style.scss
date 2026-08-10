@@ -1,19 +1,22 @@
 @use 'sass:math';
-@import 'object/utility/font-family';
+@import 'foundation/font-family';
 
-.p15403 {
+.p00000 {
   box-sizing: border-box;
   max-width: 640px;
   margin-right: auto;
   margin-left: auto;
 
   @import 'object/component/accordion';
+  @import 'object/component/allergy';
+  @import 'object/component/box';
+  @import 'object/component/heading';
   @import 'foundation/base';
+  @import 'layout/container';
 
   // @import 'object/component/component';
 
   @import 'object/project/attention';
-  @import 'object/project/cta';
   @import 'object/project/cta-x';
   @import 'object/project/js-accordion';
   @import 'object/project/project';
@@ -34,47 +37,47 @@
   }
 }
 
-.bootstrap-v3-3-7--scope figure.p15403-mt-2 {
+.bootstrap-v3-3-7--scope figure.p00000-mt-2 {
   margin-top: 0.5rem;
 }
 
-.bootstrap-v3-3-7--scope figure.p15403-mt-4 {
+.bootstrap-v3-3-7--scope figure.p00000-mt-4 {
   margin-top: 1rem;
 }
 
-.bootstrap-v3-3-7--scope figure.p15403-mt-5 {
+.bootstrap-v3-3-7--scope figure.p00000-mt-5 {
   margin-top: 1.25rem;
 }
 
-.bootstrap-v3-3-7--scope figure.p15403-mt-6 {
+.bootstrap-v3-3-7--scope figure.p00000-mt-6 {
   margin-top: 1.5rem;
 }
 
-.bootstrap-v3-3-7--scope figure.p15403-mt-8 {
+.bootstrap-v3-3-7--scope figure.p00000-mt-8 {
   margin-top: 2rem;
 }
 
-.bootstrap-v3-3-7--scope figure.p15403-mb-8 {
+.bootstrap-v3-3-7--scope figure.p00000-mb-8 {
   margin-bottom: 2rem;
 }
 
-div.content h2.p15403-text-xl {
+div.content h2.p00000-text-xl {
   font-size: 1.25rem;
 }
 
-div.content h2.p15403-text-2xl {
+div.content h2.p00000-text-2xl {
   font-size: 1.5rem;
 }
 
-.ui-mobile a img.p15403-border-4 {
+.ui-mobile a img.p00000-border-4 {
   border-width: 4px;
 }
 
-.ui-mobile a img.p15403-border-8 {
+.ui-mobile a img.p00000-border-8 {
   border-width: 8px;
 }
 
-.bootstrap-v3-3-7--scope .p15403 a:focus {
+.bootstrap-v3-3-7--scope .p00000 a:focus {
   outline: unset;
   outline-offset: unset;
 }

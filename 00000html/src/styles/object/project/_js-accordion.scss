@@ -1,11 +1,11 @@
-.p15403-accordion-single {
+.p00000-accordion-single {
   background-color: #fff;
   border-color: #c8d5db;
   border-style: solid;
   border-width: 1px 0 0;
 }
 
-.p15403-accordion-single-title {
+.p00000-accordion-single-title {
   position: relative;
   padding: 8px 20px;
   margin: 0;
@@ -34,7 +34,7 @@
   }
 }
 
-.p15403-accordion-single-content {
+.p00000-accordion-single-content {
   max-height: 0;
   overflow: hidden;
   font-size: 10px;
@@ -46,7 +46,7 @@
   }
 }
 
-.p15403-accordion-single-content-inner {
+.p00000-accordion-single-content-inner {
   padding: 16px;
 
   @media (width >=640px) {
@@ -54,18 +54,18 @@
   }
 }
 
-.p15403-accordion-single-item {
+.p00000-accordion-single-item {
   // border-width: 0 0 1px;
   // border-style: solid;
   // border-color: #c8d5db;
 }
 
-.p15403-accordion-single-item.p15403-is-open {
-  .p15403-accordion-single-content {
+.p00000-accordion-single-item.p00000-is-open {
+  .p00000-accordion-single-content {
     max-height: fit-content;
   }
 
-  .p15403-accordion-single-title::after {
+  .p00000-accordion-single-title::after {
     transform: translateY(-50%) rotate(315deg);
   }
 }

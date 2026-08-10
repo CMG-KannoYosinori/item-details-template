@@ -1,0 +1,9 @@
+// Component: 白ベースのコンテンツボックス
+.p00000-c-box {
+  padding: 24px 16px;
+  background-color: #fff;
+
+  @media (width >= 640px) {
+    padding: 32px;
+  }
+}

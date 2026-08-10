@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const details = document.querySelectorAll('.p15403-accordion-details');
+  const details = document.querySelectorAll('.p00000-accordion-details');
 
   details.forEach((element) => {
-    const summary = element.querySelector('.p15403-accordion-details__summary');
-    const content = element.querySelector('.p15403-accordion-details__content');
+    const summary = element.querySelector('.p00000-accordion-details__summary');
+    const content = element.querySelector('.p00000-accordion-details__content');
 
     summary.addEventListener('click', (e) => {
       e.preventDefault();

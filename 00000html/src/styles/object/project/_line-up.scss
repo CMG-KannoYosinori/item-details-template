@@ -1,15 +1,15 @@
-.p15403-p-line-up {
+.p00000-p-line-up {
   font-family: 'Noto Sans JP', sans-serif;
   background-color: #fff;
 }
 
-// .p15403-p-line-up__item {
-//   &:nth-child(n + 2) {
-//     border-top: 2px dashed #666;
-//   }
-// }
+.p00000-p-line-up__item {
+  &:nth-child(n + 2) {
+    border-top: 2px dashed #666;
+  }
+}
 
-.p15403-p-line-up__heading {
+.p00000-p-line-up__heading {
   position: relative;
   font-size: 24px;
   font-weight: bold;
@@ -20,20 +20,20 @@
   }
 }
 
-.p15403-p-line-up__heading::before,
-.p15403-p-line-up__heading::after {
+.p00000-p-line-up__heading::before,
+.p00000-p-line-up__heading::after {
   content: '-';
 }
 
-.p15403-p-line-up__heading::before {
+.p00000-p-line-up__heading::before {
   margin-right: 8px;
 }
 
-.p15403-p-line-up__heading::after {
+.p00000-p-line-up__heading::after {
   margin-left: 8px;
 }
 
-.p15403-p-line-up__card {
+.p00000-p-line-up__card {
   padding: 32px 16px;
   margin: auto;
 
@@ -43,7 +43,7 @@
   }
 }
 
-.p15403-p-line-up__card-heading {
+.p00000-p-line-up__card-heading {
   padding-bottom: 4px;
   font-size: 22px;
   font-weight: 700;
@@ -62,7 +62,7 @@
   }
 }
 
-.p15403-p-line-up__card-row {
+.p00000-p-line-up__card-row {
   display: grid;
   grid-template-rows: 1fr;
   column-gap: 32px;
@@ -84,13 +84,13 @@
   }
 }
 
-.p15403-p-line-up__card-item {
+.p00000-p-line-up__card-item {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
 
-.p15403-p-line-up__card-lead {
+.p00000-p-line-up__card-lead {
   margin-bottom: 16px;
   font-size: 14px;
   font-weight: bold;
@@ -103,14 +103,14 @@
   }
 }
 
-.p15403-p-line-up__card-lead::before,
-.p15403-p-line-up__card-lead::after {
+.p00000-p-line-up__card-lead::before,
+.p00000-p-line-up__card-lead::after {
   @media (width >=640px) {
     content: '～';
   }
 }
 
-.p15403-p-line-up__card-description {
+.p00000-p-line-up__card-description {
   line-height: 1.75;
 
   @media (width >=640px) {
@@ -118,13 +118,13 @@
   }
 }
 
-.p15403-p-line-up__card-description-note {
+.p00000-p-line-up__card-description-note {
   font-size: 12px;
 
   // text-align: left;
 }
 
-.p15403-p-line-up__card-detail {
+.p00000-p-line-up__card-detail {
   display: grid;
   width: fit-content;
   font-size: 13px;

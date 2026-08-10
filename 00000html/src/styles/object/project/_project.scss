@@ -1,297 +1,10 @@
-$webp: '?as=webp';
-
 @import 'main';
 @import 'line-up';
 @import 'banner';
 
-// /p15403 固有のスタイル ===============
-.p15403-p-mv__catch,
-.p15403-p-feature,
-.p15403-p-feature-2 {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-weight: 700;
-}
+// p00000 プロジェクト毎の固有のスタイル: 基本的にはこの中を編集する
 
-.p15403-p-feature,
-.p15403-p-feature-2 {
-  color: #37230a;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: cover;
-}
-
-.p15403-p-mv__catch {
-  padding: 8px 0;
-  font-size: 16px;
-  line-height: 1.375;
-  color: #fff;
-  text-align: center;
-  letter-spacing: 0.05em;
-  background-color: #910882;
-
-  @media (width >=375px) {
-    font-size: 18px;
-  }
-
-  @media (width >=640px) {
-    font-size: 28px;
-  }
-}
-
-.p15403-p-feature {
-  padding: 32px 16px;
-  background-image: url('https://image.moratame.net/images/detail/15403/images/top2_bg.jpg');
-
-  @media (width >=640px) {
-    padding: 48px 32px;
-  }
-}
-.p15403-p-feature-2 {
-  padding: 8px;
-  background-image: url('https://image.moratame.net/images/detail/15403/images/top3_bg.jpg');
-
-  @media (width >=640px) {
-    padding: 16px;
-  }
-}
-
-.p15403-p-feature__card {
-  padding: 32px 16px;
-  background-color: rgb(255 255 255 / 75%);
-  border-radius: 16px;
-
-  @media (width >=640px) {
-    padding: 32px;
-  }
-}
-.p15403-p-feature__card + .p15403-p-feature__card {
-  margin-top: 40px;
-
-  @media (width >=640px) {
-    margin-top: 48px;
-  }
-}
-.p15403-p-feature__heading {
-  max-width: fit-content;
-  padding: 4px 24px;
-  margin-right: auto;
-  margin-bottom: 24px;
-  margin-left: auto;
-  font-weight: 800;
-  line-height: 1.25;
-  color: #fff;
-  text-align: center;
-  background-color: #e5000f;
-  border-radius: 9999px;
-
-  @media (width >=640px) {
-    font-size: 24px;
-  }
-  &.p15403-p-feature__heading--1 {
-    padding: 4px 24px;
-    font-size: 24px;
-    background-color: #e5000f;
-  }
-  &.p15403-p-feature__heading--2 {
-    padding: 4px 8px;
-    font-size: 16px;
-    background-color: #910882;
-
-    @media (width >=375px) {
-      padding: 4px 24px;
-      font-size: 23px;
-    }
-
-    @media (width >=640px) {
-      padding: 4px 24px;
-      font-size: 24px;
-    }
-  }
-}
-.p15403-p-feature__description {
-  margin-right: auto;
-  margin-bottom: 24px;
-  margin-left: auto;
-  font-size: 16px;
-  line-height: 1.625;
-}
-.p15403-p-feature__description:last-child {
-  margin-bottom: 0;
-}
-
-.p15403-p-feature__block + .p15403-p-feature__block {
-  margin-top: 40px;
-
-  @media (width >=640px) {
-    margin-top: 48px;
-  }
-}
-
-.p15403-p-feature__list {
-  display: grid;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-
-  @media (width >=640px) {
-    gap: 24px;
-  }
-}
-
-.p15403-p-feature__item {
-  padding: 0;
-  margin: 0;
-}
-
-.p15403-p-feature__item-title {
-  display: flex;
-  gap: 4px 8px;
-  align-items: baseline;
-  margin: 0 0 8px;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: 0.05em;
-
-  @media (width >=640px) {
-    font-size: 20px;
-  }
-}
-
-.p15403-p-feature__item-num {
-  display: grid;
-  flex-shrink: 0;
-  place-items: center;
-  width: 1.5em;
-  height: 1.5em;
-  font-size: 14px;
-  line-height: 1;
-  color: #c45a2c;
-  background-color: #fff;
-  border-radius: 50%;
-
-  @media (width >=640px) {
-    font-size: 16px;
-  }
-}
-
-.p15403-p-feature__item-note {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: 0;
-
-  @media (width >=640px) {
-    font-size: 13px;
-  }
-}
-
-.p15403-p-feature__item-text {
-  padding-left: calc(1.5em + 8px);
-  margin: 0;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.625;
-
-  @media (width >=640px) {
-    font-size: 16px;
-  }
-}
-
-.p15403-p-feature-2__borders-body {
-  padding-right: 16px;
-  padding-left: 16px;
-  border-right: calc(100vw / 640 * 2) solid #c39c89;
-  border-left: calc(100vw / 640 * 2) solid #c39c89;
-
-  @media (width >=640px) {
-    padding-right: 32px;
-    padding-left: 32px;
-    border-right: 2px solid #c39c89;
-    border-left: 2px solid #c39c89;
-  }
-}
-.p15403-p-feature-2__recipe {
-  margin-bottom: 32px;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-.p15403-p-feature-2__photo {
-  display: block;
-  max-width: 420px;
-  margin-right: auto;
-  margin-bottom: 8px;
-  margin-left: auto;
-  border: 4px solid #fff;
-  box-shadow: 0 0 16px rgb(0 0 0 / 35%);
-}
-
-.p15403-p-feature-2__heading {
-  margin-bottom: 32px;
-  font-size: 24px;
-  font-weight: 800;
-  line-height: 1.25;
-  text-align: center;
-
-  @media (width >=640px) {
-    font-size: 30px;
-  }
-}
-
-.p15403-p-allergy {
-  margin-top: 32px;
-  font-size: 12px;
-  line-height: 1.625;
-  color: red;
-
-  @media (width >=640px) {
-    font-size: 14px;
-  }
-}
-
-.p15403-p-allergy__heading {
-  padding: 4px 24px;
-  font-size: inherit;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.5;
-  color: #fff;
-  text-align: center;
-  background-color: red;
-  border-radius: 4px 4px 0 0;
-}
-
-.p15403-p-allergy__body {
-  padding: 0 12px 12px;
-  border-color: red;
-  border-style: solid;
-  border-width: 0 1px 1px;
-  border-radius: 0 0 4px 4px;
-}
-.p15403-p-allergy__list {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin: 0;
-  font-weight: 700;
-  text-align: center;
-}
-
-.p15403-p-allergy__note {
-  padding-left: 1em;
-  margin: 4px 0 0;
-  font-size: 12px;
-  line-height: 1.5;
-  text-indent: -1em;
-
-  @media (width >=640px) {
-    text-align: center;
-  }
-}
-
-.p15403-p-button {
+.p00000-p-button {
   display: grid;
   place-items: center;
   width: 100%;
@@ -309,7 +22,7 @@ $webp: '?as=webp';
     max-width: 320px;
   }
 }
-.p15403-p-item-new {
+.p00000-p-item-new {
   padding: 16px;
   margin-top: 32px;
   border-radius: 16px;
@@ -318,7 +31,7 @@ $webp: '?as=webp';
     padding: 16px 32px;
   }
 }
-.p15403-p-item-grid {
+.p00000-p-item-grid {
   display: grid;
   gap: 16px;
   align-items: center;
@@ -328,13 +41,24 @@ $webp: '?as=webp';
     gap: 32px;
   }
 }
-.p15403-p-banner-item {
+.p00000-p-banner-item {
   border: none;
 }
 
-.p15403-p-banner p {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
+.p00000-p-banner p {
   font-weight: 800;
 }
 
-// /p15403 固有のスタイル ===============
+.p00000-p-section {
+  p + p {
+    margin-top: 16px;
+  }
+  &.p00000-p-section--1 {
+    background-color: oklch(93.6% 0.032 17.717);
+  }
+  &.p00000-p-section--2 {
+    background-color: oklch(95.4% 0.038 75.164);
+  }
+}
+
+// p00000 プロジェクト毎の固有のスタイル: 基本的にはこの中のみ編集する

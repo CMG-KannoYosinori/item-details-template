@@ -1,9 +1,9 @@
-.p15403-accordion-details {
+.p00000-accordion-details {
   line-height: 1.5;
   color: #424448;
   background-color: #f9f9f9;
 
-  .p15403-accordion-details__summary {
+  .p00000-accordion-details__summary {
     position: relative;
     display: block;
     padding: 10px 40px 10px 16px;
@@ -37,11 +37,11 @@
     }
   }
 
-  &[open] .p15403-accordion-details__summary::before {
+  &[open] .p00000-accordion-details__summary::before {
     transform: rotate(-90deg);
   }
 
-  .p15403-accordion-details__content {
+  .p00000-accordion-details__content {
     padding-right: 16px;
     padding-left: 16px;
     margin: 0;

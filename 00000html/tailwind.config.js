@@ -6,6 +6,6 @@ module.exports = {
       pc: '640px',
     },
   },
-  prefix: 'p15403-',
+  prefix: 'p00000-',
   plugins: [],
 };

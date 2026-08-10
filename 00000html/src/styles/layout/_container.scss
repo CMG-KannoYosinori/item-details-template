@@ -1,0 +1,8 @@
+// Layout: コンテンツ用の余白コンテナ
+.p00000-l-container {
+  padding: 32px 16px;
+
+  @media (width >= 640px) {
+    padding: 48px 32px;
+  }
+}
