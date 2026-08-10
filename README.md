@@ -5,7 +5,7 @@
 - **チーム向け手順** → [`00000html/README.md`](./00000html/README.md)
 - **このファイル** → テンプレート整備・npm・GitHub Pages など、作成者用
 
-チームは `00000html/dist` と `00000html/src` を Live Sass / Live Server だけで使います。`npm` はテンプレート作成・メンテ時のみ使います。
+チームは `00000html/dist` と `00000html/src` を Live Sass / Live Server だけで使います。`npm` はリポジトリルートで、テンプレート作成・メンテ時のみ使います。
 
 ---
 
@@ -17,8 +17,12 @@ item-details-template/
 │   ├── README.md              # チーム向け説明書
 │   ├── dist/                  # チームが編集・納品する成果物
 │   ├── src/                   # チームが編集する SCSS
-│   ├── .vscode/               # Live Sass / Live Server 設定
-│   └── package.json           # 作成者用 npm（チームは不要）
+│   └── .vscode/               # Live Sass / Live Server 設定
+├── package.json               # 作成者用 npm
+├── package-lock.json
+├── .prettierrc.json
+├── .stylelintrc.json
+├── eslint.config.mjs
 ├── .vscode/                   # リポジトリルート用 Live Sass 設定
 ├── .github/workflows/         # GitHub Pages デプロイ
 └── README.md                  # 本ファイル（作成者向け）
@@ -28,10 +32,9 @@ item-details-template/
 
 ## npm（作成者用）
 
-`00000html` で実行します。チームの日常作業では使いません。
+リポジトリルートで実行します。チームの日常作業では使いません。
 
 ```shell
-cd 00000html
 npm install
 npm run watch   # Sass 監視コンパイル
 npm run build   # format + Sass ビルド
@@ -40,7 +43,7 @@ npm run format  # ESLint / Prettier / Stylelint
 
 | スクリプト | 用途 |
 | ---------- | ---- |
-| `watch` / `watch:sass` | `src/styles/` → `dist/styles/` を監視コンパイル |
+| `watch` / `watch:sass` | `00000html/src/styles/` → `00000html/dist/styles/` を監視コンパイル |
 | `build:sass` | Sass の一回ビルド |
 | `build` | `format` のあと `build:sass` |
 | `format` | JS / SCSS の整形（Stylelint 含む） |

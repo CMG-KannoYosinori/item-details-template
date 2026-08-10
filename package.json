@@ -1,20 +1,20 @@
 {
-  "name": "wrk-html-npm",
+  "name": "item-details-template",
   "version": "1.0.0",
-  "description": "",
-  "main": "",
+  "description": "もらため商品詳細 HTML テンプレート（作成者用ツール）",
+  "private": true,
   "volta": {
     "node": "18.16.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:sass": "sass --no-source-map --watch src/styles/:dist/styles/",
+    "watch:sass": "sass --no-source-map --watch 00000html/src/styles/:00000html/dist/styles/",
     "watch": "npm run watch:sass",
-    "format:eslint": "eslint dist/**/*.js --fix",
-    "format:prettier": "prettier --write dist/**/*.js",
-    "format:stylelint:sass": "stylelint 'src/**/*.scss' --fix",
+    "format:eslint": "eslint 00000html/dist/**/*.js --fix",
+    "format:prettier": "prettier --write 00000html/dist/**/*.js",
+    "format:stylelint:sass": "stylelint '00000html/src/**/*.scss' --fix",
     "format": "npm run format:eslint && npm run format:prettier && npm run format:stylelint:sass",
-    "build:sass": "sass --no-source-map src/styles/:dist/styles",
+    "build:sass": "sass --no-source-map 00000html/src/styles/:00000html/dist/styles",
     "build": "npm run format && npm run build:sass"
   },
   "author": "",
