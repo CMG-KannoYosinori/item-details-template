@@ -1,20 +1,33 @@
 ---
-description: 作業で手順や構成が変わったら 00000html/README.md を更新する
+description: 作業で手順や構成が変わったら README を更新する
 alwaysApply: true
 ---
 
-# チーム向け README の更新
+# README の更新
 
-作業のたびに、必要であれば `00000html/README.md` を更新する。
+ドキュメントは役割ごとに分かれています。
+
+| 対象 | ファイル |
+| ---- | -------- |
+| チーム（`dist` / `src`、Live Sass / Live Server） | `00000html/README.md` |
+| テンプレート作成者（npm、GitHub Pages、リポジトリ運用） | リポジトリ直下の `README.md` |
 
 ## 更新が必要な例
+
+### `00000html/README.md`（チーム向け）
 
 - セットアップ手順（一括置換、フォルダ名、Live Sass パスなど）の変更
 - ディレクトリ構成や FLOCSS の置き場所の変更
 - クラス命名規則（`c-` / `p-` / `l-` / `u-`）の追加・変更
-- 開発フロー（Live Sass、Live Server、npm スクリプト）の変更
+- 開発フロー（Live Sass、Live Server）の変更
 - マークアップ例やチェックリストの追加・修正
 - ファイルの追加・削除で、ドキュメント上の説明と実態がずれたとき
+
+### リポジトリ直下の `README.md`（作成者向け）
+
+- npm スクリプトや依存関係の変更
+- GitHub Pages / CI の変更
+- テンプレート作成・メンテ手順の変更
 
 ## 更新しなくてよい例
 
@@ -24,6 +37,6 @@ alwaysApply: true
 ## 進め方
 
 1. 実装・削除・リネームなどを行う
-2. `00000html/README.md` の該当箇所が古くなっていないか確認する
+2. 変更内容がチーム向けか作成者向けかを判断し、該当 README を更新する
 3. チームが迷わないよう、手順と例を簡潔に追記・修正する
 4. コミットする場合は README の更新も含める（gitmoji ルールに従う）

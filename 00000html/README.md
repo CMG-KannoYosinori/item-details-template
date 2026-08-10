@@ -2,6 +2,13 @@
 
 もらため商品詳細 HTML のテンプレートです。案件ごとにこのディレクトリをコピーし、プロジェクト ID に合わせて編集してください。
 
+**チームが触るのは次だけです。**
+
+- `dist/` … HTML・画像・スクリプト・コンパイル済み CSS（納品・プレビュー）
+- `src/` … SCSS ソース（FLOCSS）
+
+開発は **Live Sass Compiler** と **Live Server** だけで行います。`npm` は不要です。
+
 ---
 
 ## 1. はじめに（必須）
@@ -39,7 +46,7 @@
 置換後、次もリネームします。
 
 ```
-00000html/          →  15403html/
+00000html/                 →  15403html/
 00000html/dist/00000.html  →  15403html/dist/15403.html
 ```
 
@@ -54,11 +61,11 @@
 
 ---
 
-## 2. ディレクトリ構成
+## 2. ディレクトリ構成（チームが使う範囲）
 
 ```
 00000html/
-├── dist/                 # 納品・プレビュー用（ここを編集・公開の対象にする）
+├── dist/                 # 納品・プレビュー用
 │   ├── 00000.html
 │   ├── images/
 │   ├── scripts/
@@ -73,8 +80,7 @@
 │           ├── component/  # 再利用 UI（c-）
 │           ├── project/    # 案件固有（p-）※主にここを編集
 │           └── utility/    # ユーティリティ（u-）
-├── .vscode/              # Live Sass / Live Server 設定
-└── package.json          # npm スクリプト（任意）
+└── .vscode/              # Live Sass / Live Server 設定
 ```
 
 ---
@@ -83,13 +89,13 @@
 
 プレフィックス `p00000`（置換後は `p15403` など）は、サイト全体 CSS との衝突回避用です。
 
-| 層         | 接頭辞 | 置くもの                     | 例                                                     |
-| ---------- | ------ | ---------------------------- | ------------------------------------------------------ |
-| Foundation | —      | フォント読み込み、ベース     | `foundation/_font-family.scss`                         |
-| Layout     | `l-`   | 余白・幅などのレイアウト     | `p00000-l-container`                                   |
+| 層         | 接頭辞 | 置くもの                     | 例                                                                                         |
+| ---------- | ------ | ---------------------------- | ------------------------------------------------------------------------------------------ |
+| Foundation | —      | フォント読み込み、ベース     | `foundation/_font-family.scss`                                                             |
+| Layout     | `l-`   | 余白・幅などのレイアウト     | `p00000-l-container`                                                                       |
 | Component  | `c-`   | 再利用できる UI 部品         | `p00000-c-box`, `p00000-c-heading`, `p00000-c-allergy`, `p00000-c-banner`, `p00000-c-button`, `p00000-c-youtube` |
-| Project    | `p-`   | その商品ページ固有のブロック | `p00000-p-main`, `p00000-p-section`                    |
-| Utility    | `u-`   | 単機能ヘルパー               | `p00000-u-font-noto-serif-jp`, `p00000-u-text-center`  |
+| Project    | `p-`   | その商品ページ固有のブロック | `p00000-p-main`, `p00000-p-section`                                                        |
+| Utility    | `u-`   | 単機能ヘルパー               | `p00000-u-font-noto-serif-jp`, `p00000-u-text-center`                                      |
 
 ### どこを編集するか
 
@@ -101,7 +107,7 @@
 
 ---
 
-## 4. 開発環境
+## 4. 開発環境（Live Sass / Live Server）
 
 ### 推奨拡張機能
 
@@ -121,7 +127,7 @@ src/styles/style.scss  →  dist/styles/style.css
 
 > `src/styles/` 直下に `.css` が生成された場合は、設定が効いていません。Watch を止め、リポジトリ／フォルダの開き方と `.vscode/settings.json` を確認してください。
 
-### プレビュー
+### プレビュー（Live Server）
 
 1. Live Server で `dist/00000.html`（置換後は `dist/15403.html` など）を開く
 2. 開発中はローカル CSS を読み込む
@@ -137,58 +143,23 @@ src/styles/style.scss  →  dist/styles/style.css
 <link href="https://image.moratame.net/images/detail/15403/styles/style.css" rel="stylesheet" type="text/css" />
 ```
 
-### npm を使う場合（任意）
-
-```shell
-cd 00000html   # 置換後は 15403html など
-npm install
-npm run watch  # または npm run build
-npm run format
-```
-
-`npm run format`（Stylelint）で SCSS のプロパティ順を整えます。並びは [stylelint-config-recess-order](https://github.com/stormwarning/stylelint-config-recess-order) に従い、おおむね **配置 → ボックスモデル → タイポグラフィ → 背景・ボーダー** です。
-
-普段の SCSS コンパイルは Live Sass で十分な想定です。
-
 ---
 
-## 5. GitHub Pages（プレビュー公開）
-
-`00000html/dist/` を GitHub Pages で公開できます。`main` への push で自動デプロイされます。
-
-### 初回セットアップ
-
-1. リポジトリの **Settings → Pages**
-2. **Build and deployment → Source** を **GitHub Actions** にする
-3. `main` にワークフロー（`.github/workflows/deploy-pages.yml`）を push する
-
-### 公開 URL
-
-```
-https://<owner>.github.io/item-details-template/
-```
-
-デプロイ時に `00000.html` を `index.html` としてもコピーするため、ルートで表示されます。
-
-> 開発用のローカル CSS（`./styles/style.css`）のまま Pages に載ります。本番 CDN 向けとは別用途のプレビューです。
-
----
-
-## 6. 作業の流れ（チェックリスト）
+## 5. 作業の流れ（チェックリスト）
 
 1. [ ] テンプレートをコピーする
 2. [ ] `p00000` → `pXXXXX`、続けて `00000` → `XXXXX` を一括置換する
 3. [ ] フォルダ名・HTML ファイル名をリネームする
 4. [ ] `.vscode` の Live Sass パスを必要に応じて更新する
 5. [ ] Watch Sass を開始する
-6. [ ] `dist/*.html` と `object/project/` を中心にコーディングする
-7. [ ] 画像は `dist/images/`（または CDN パス）に配置する
-8. [ ] 公開前に CSS のリンク先（ローカル / CDN）を確認する
-9. [ ] 必要なら `npm run format` で整形する
+6. [ ] Live Server で `dist/*.html` を開く
+7. [ ] `dist/*.html` と `src/styles/object/project/` を中心にコーディングする
+8. [ ] 画像は `dist/images/`（または CDN パス）に配置する
+9. [ ] 公開前に CSS のリンク先（ローカル / CDN）を確認する
 
 ---
 
-## 7. マークアップの例
+## 6. マークアップの例
 
 ```html
 <section class="p00000-p-section p00000-p-section--1">
@@ -239,7 +210,7 @@ https://<owner>.github.io/item-details-template/
 
 ---
 
-## 8. 補足
+## 7. 補足
 
 ### `@import` の警告について
 
