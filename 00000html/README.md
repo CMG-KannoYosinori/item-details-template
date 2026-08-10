@@ -149,7 +149,29 @@ npm run format
 
 ---
 
-## 5. 作業の流れ（チェックリスト）
+## 5. GitHub Pages（プレビュー公開）
+
+`00000html/dist/` を GitHub Pages で公開できます。`main` への push で自動デプロイされます。
+
+### 初回セットアップ
+
+1. リポジトリの **Settings → Pages**
+2. **Build and deployment → Source** を **GitHub Actions** にする
+3. `main` にワークフロー（`.github/workflows/deploy-pages.yml`）を push する
+
+### 公開 URL
+
+```
+https://<owner>.github.io/item-details-template/
+```
+
+デプロイ時に `00000.html` を `index.html` としてもコピーするため、ルートで表示されます。
+
+> 開発用のローカル CSS（`./styles/style.css`）のまま Pages に載ります。本番 CDN 向けとは別用途のプレビューです。
+
+---
+
+## 6. 作業の流れ（チェックリスト）
 
 1. [ ] テンプレートをコピーする
 2. [ ] `p00000` → `pXXXXX`、続けて `00000` → `XXXXX` を一括置換する
@@ -163,7 +185,7 @@ npm run format
 
 ---
 
-## 6. マークアップの例
+## 7. マークアップの例
 
 ```html
 <section class="p00000-p-section p00000-p-section--1">
@@ -184,7 +206,7 @@ npm run format
 
 ---
 
-## 7. 補足
+## 8. 補足
 
 ### `@import` の警告について
 
