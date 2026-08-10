@@ -87,13 +87,14 @@
 | ---------- | ------ | ---------------------------- | ------------------------------------------------------ |
 | Foundation | —      | フォント読み込み、ベース     | `foundation/_font-family.scss`                         |
 | Layout     | `l-`   | 余白・幅などのレイアウト     | `p00000-l-container`                                   |
-| Component  | `c-`   | 再利用できる UI 部品         | `p00000-c-box`, `p00000-c-heading`, `p00000-c-allergy`, `p00000-c-button`, `p00000-c-youtube` |
+| Component  | `c-`   | 再利用できる UI 部品         | `p00000-c-box`, `p00000-c-heading`, `p00000-c-allergy`, `p00000-c-banner`, `p00000-c-button`, `p00000-c-youtube` |
 | Project    | `p-`   | その商品ページ固有のブロック | `p00000-p-main`, `p00000-p-section`                    |
 | Utility    | `u-`   | 単機能ヘルパー               | `p00000-u-font-noto-serif-jp`, `p00000-u-text-center`  |
 
 ### どこを編集するか
 
 - **案件ごとの見た目・構成** → `object/project/_project.scss` を中心に編集
+- **Project 層のパーシャルを増やす** → ファイルを `object/project/` に追加し、`style.scss` で `@import` する（Component と同じ）
 - **共通部品として再利用したい** → `object/component/` に切り出す
 - **余白だけ欲しい** → `p00000-l-container` など Layout を使う
 - **フォント指定だけ** → Utility クラスを HTML に付与
@@ -144,6 +145,8 @@ npm install
 npm run watch  # または npm run build
 npm run format
 ```
+
+`npm run format`（Stylelint）で SCSS のプロパティ順を整えます。並びは [stylelint-config-recess-order](https://github.com/stormwarning/stylelint-config-recess-order) に従い、おおむね **配置 → ボックスモデル → タイポグラフィ → 背景・ボーダー** です。
 
 普段の SCSS コンパイルは Live Sass で十分な想定です。
 
@@ -202,6 +205,7 @@ https://<owner>.github.io/item-details-template/
 - `l-container` … 余白コンテナ（Layout）
 - `c-box` … 白ボックス（Component）
 - `c-heading` … 共通見出し（Component）
+- `c-banner` … バナーブロック（Component）
 - `u-font-*` … フォント指定（Utility）
 - `u-text-center` … 中央寄せ（Utility）
 

@@ -1,7 +1,3 @@
-@import 'main';
-@import 'line-up';
-@import 'banner';
-
 // p00000 プロジェクト毎の固有のスタイル: 基本的にはこの中を編集する
 
 .p00000-p-item-new {
@@ -23,23 +19,15 @@
     gap: 32px;
   }
 }
-.p00000-p-banner-item {
-  border: none;
-}
-
-.p00000-p-banner p {
-  font-weight: 800;
-}
-
 .p00000-p-section {
   p + p {
     margin-top: 16px;
   }
   &.p00000-p-section--1 {
-    background-color: oklch(93.6% 0.032 17.717);
+    background-color: oklch(93.6% 0.032 17.717deg);
   }
   &.p00000-p-section--2 {
-    background-color: oklch(95.4% 0.038 75.164);
+    background-color: oklch(95.4% 0.038 75.164deg);
   }
 }
 

@@ -1,24 +1,19 @@
 .p00000-p-main {
   position: relative;
-  width: auto;
   overflow: hidden;
   font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ',
     Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
   font-size: 14px;
   font-feature-settings: 'palt';
-
-  // font-family: 'Noto Sans JP', sans-serif;
-  // font-family: 'Noto Serif JP', serif;
   line-height: 1.625;
   color: #424448;
   text-align: justify;
   text-justify: inter-ideograph;
   letter-spacing: 0.1em;
   background-color: #fff;
-  background-size: 160px;
   border: 1px solid #ccc;
 
-  @media (width >=640px) {
+  @media (width >= 640px) {
     font-size: 16px;
   }
 }

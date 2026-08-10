@@ -110,6 +110,28 @@
     text-align: center;
   }
 }
+.p00000 .p00000-c-banner {
+  padding: 32px 16px;
+  background-color: #f3f4f6;
+}
+.p00000 .p00000-c-banner-item {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #fff;
+}
+.p00000 .p00000-c-banner-item p {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  background-color: #004098;
+}
 .p00000 .p00000-c-box {
   padding: 24px 16px;
   background-color: #fff;
@@ -139,11 +161,11 @@
   }
 }
 .p00000 .p00000-c-heading {
+  margin-bottom: 16px;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.5;
   text-align: center;
-  margin-bottom: 16px;
 }
 @media (width >= 640px) {
   .p00000 .p00000-c-heading {
@@ -364,85 +386,6 @@
     display: none;
   }
 }
-.p00000 .p00000-accordion-single {
-  background-color: #fff;
-  border-color: #c8d5db;
-  border-style: solid;
-  border-width: 1px 0 0;
-}
-.p00000 .p00000-accordion-single-title {
-  position: relative;
-  padding: 8px 20px;
-  margin: 0;
-  font-size: 14px;
-  text-align: center;
-  cursor: pointer;
-}
-@media (width >= 640px) {
-  .p00000 .p00000-accordion-single-title {
-    font-size: 14px;
-  }
-}
-.p00000 .p00000-accordion-single-title::after {
-  position: absolute;
-  top: 50%;
-  right: 25px;
-  display: block;
-  width: 8px;
-  height: 8px;
-  content: "";
-  border-top: solid 2px #999;
-  border-right: solid 2px #999;
-  transition: all 0.2s ease-in-out;
-  transform: translateY(-50%) rotate(135deg);
-}
-.p00000 .p00000-accordion-single-content {
-  max-height: 0;
-  overflow: hidden;
-  font-size: 10px;
-  text-align: left;
-  transition: max-height 0.3s ease-in-out;
-}
-@media (width >= 640px) {
-  .p00000 .p00000-accordion-single-content {
-    font-size: 12px;
-  }
-}
-.p00000 .p00000-accordion-single-content-inner {
-  padding: 16px;
-}
-@media (width >= 640px) {
-  .p00000 .p00000-accordion-single-content-inner {
-    padding: 16px 32px;
-  }
-}
-.p00000 .p00000-accordion-single-item.p00000-is-open .p00000-accordion-single-content {
-  max-height: fit-content;
-}
-.p00000 .p00000-accordion-single-item.p00000-is-open .p00000-accordion-single-title::after {
-  transform: translateY(-50%) rotate(315deg);
-}
-.p00000 .p00000-p-main {
-  position: relative;
-  width: auto;
-  overflow: hidden;
-  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-  font-size: 14px;
-  font-feature-settings: "palt";
-  line-height: 1.625;
-  color: #424448;
-  text-align: justify;
-  text-justify: inter-ideograph;
-  letter-spacing: 0.1em;
-  background-color: #fff;
-  background-size: 160px;
-  border: 1px solid #ccc;
-}
-@media (width >= 640px) {
-  .p00000 .p00000-p-main {
-    font-size: 16px;
-  }
-}
 .p00000 .p00000-p-line-up {
   font-family: "Noto Sans JP", sans-serif;
   background-color: #fff;
@@ -571,27 +514,24 @@
   border-style: dashed;
   border-width: 0 0 2px;
 }
-.p00000 .p00000-p-banner {
-  padding: 32px 16px;
-  background-color: #f3f4f6;
-}
-.p00000 .p00000-p-banner-item {
-  display: block;
-  width: 100%;
-  max-width: 360px;
-  height: auto;
-  margin-right: auto;
-  margin-left: auto;
+.p00000 .p00000-p-main {
+  position: relative;
+  overflow: hidden;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  font-size: 14px;
+  font-feature-settings: "palt";
+  line-height: 1.625;
+  color: #424448;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  letter-spacing: 0.1em;
   background-color: #fff;
-  border: 4px solid #d1d5db;
+  border: 1px solid #ccc;
 }
-.p00000 .p00000-p-banner-item p {
-  padding: 8px 16px;
-  font-size: 16px;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  background-color: #004098;
+@media (width >= 640px) {
+  .p00000 .p00000-p-main {
+    font-size: 16px;
+  }
 }
 .p00000 .p00000-p-item-new {
   padding: 16px;
@@ -614,20 +554,14 @@
     gap: 32px;
   }
 }
-.p00000 .p00000-p-banner-item {
-  border: none;
-}
-.p00000 .p00000-p-banner p {
-  font-weight: 800;
-}
 .p00000 .p00000-p-section p + p {
   margin-top: 16px;
 }
 .p00000 .p00000-p-section.p00000-p-section--1 {
-  background-color: oklch(93.6% 0.032 17.717);
+  background-color: oklch(93.6% 0.032 17.717deg);
 }
 .p00000 .p00000-p-section.p00000-p-section--2 {
-  background-color: oklch(95.4% 0.038 75.164);
+  background-color: oklch(95.4% 0.038 75.164deg);
 }
 .p00000 .p00000-hidden {
   display: none;
@@ -719,7 +653,6 @@
   display: none;
 }
 .p00000 .p00000-w-fit {
-  width: fit-content;
   width: fit-content;
 }
 .p00000 .p00000-max-w-\[240px\] {
