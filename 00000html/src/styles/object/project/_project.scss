@@ -4,24 +4,6 @@
 
 // p00000 プロジェクト毎の固有のスタイル: 基本的にはこの中を編集する
 
-.p00000-p-button {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  max-width: 254px;
-  height: 48px;
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  background-color: #910882;
-  border-radius: 4px;
-
-  @media (width >=640px) {
-    max-width: 320px;
-  }
-}
 .p00000-p-item-new {
   padding: 16px;
   margin-top: 32px;

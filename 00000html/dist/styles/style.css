@@ -6,7 +6,6 @@
   max-width: 640px;
   margin-right: auto;
   margin-left: auto;
-  /* 冷凍、冷蔵便の注意書きについて */
   /* @tailwind base; */
 }
 .p00000 .p00000-accordion-details {
@@ -120,6 +119,25 @@
     padding: 32px;
   }
 }
+.p00000 .p00000-c-button {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 254px;
+  height: 48px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #910882;
+  border-radius: 4px;
+}
+@media (width >= 640px) {
+  .p00000 .p00000-c-button {
+    max-width: 320px;
+  }
+}
 .p00000 .p00000-c-heading {
   font-size: 18px;
   font-weight: 700;
@@ -131,6 +149,16 @@
   .p00000 .p00000-c-heading {
     font-size: 28px;
   }
+}
+.p00000 .p00000-c-youtube {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.p00000 .p00000-c-youtube iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 .p00000 * {
   box-sizing: border-box;
@@ -177,38 +205,6 @@
   .p00000 .p00000-l-container {
     padding: 48px 32px;
   }
-}
-.p00000 .attention_wrap {
-  padding-top: 10px;
-}
-.p00000 .attention_border {
-  padding: 10px;
-  background: url("https://image.moratame.net/images/detail/do_house/0000stock/100802_0002.gif");
-  border: 1px solid #c00;
-}
-.p00000 .attention_inner {
-  padding: 10px 20px;
-  background: #fff;
-}
-.p00000 .attention_inner h6.attention_header {
-  margin-bottom: 10px;
-  font-size: 116%;
-  color: #c00;
-  text-align: center;
-  border-bottom: 1px solid #c00;
-}
-.p00000 .attention_inner p.attention_pragraph {
-  color: #c00;
-}
-.p00000 .attention_inner li.attention_list {
-  padding-left: 1em;
-  margin-bottom: 0.5em;
-  color: #c00;
-  text-indent: -1em;
-  border-bottom: 1px dotted #ccc;
-}
-.p00000 .attention_inner span.atttetion_link_arrow {
-  color: #f60;
 }
 .p00000 .p-cta-x {
   padding: 32px 16px 48px;
@@ -597,25 +593,6 @@
   text-align: center;
   background-color: #004098;
 }
-.p00000 .p00000-p-button {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  max-width: 254px;
-  height: 48px;
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  background-color: #910882;
-  border-radius: 4px;
-}
-@media (width >= 640px) {
-  .p00000 .p00000-p-button {
-    max-width: 320px;
-  }
-}
 .p00000 .p00000-p-item-new {
   padding: 16px;
   margin-top: 32px;
@@ -703,16 +680,6 @@
 .p00000 .p00000-u-indent.p00000-u-indent--22 {
   padding-left: 2.2em;
   text-indent: -2.2em;
-}
-.p00000 .youtube-wrapper {
-  position: relative;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-}
-.p00000 .youtube-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
 }
 .p00000 .p00000-mx-auto {
   margin-right: auto;

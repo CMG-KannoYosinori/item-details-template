@@ -87,7 +87,7 @@
 | ---------- | ------ | ---------------------------- | ------------------------------------------------------ |
 | Foundation | —      | フォント読み込み、ベース     | `foundation/_font-family.scss`                         |
 | Layout     | `l-`   | 余白・幅などのレイアウト     | `p00000-l-container`                                   |
-| Component  | `c-`   | 再利用できる UI 部品         | `p00000-c-box`, `p00000-c-heading`, `p00000-c-allergy` |
+| Component  | `c-`   | 再利用できる UI 部品         | `p00000-c-box`, `p00000-c-heading`, `p00000-c-allergy`, `p00000-c-button`, `p00000-c-youtube` |
 | Project    | `p-`   | その商品ページ固有のブロック | `p00000-p-main`, `p00000-p-section`                    |
 | Utility    | `u-`   | 単機能ヘルパー               | `p00000-u-font-noto-serif-jp`, `p00000-u-text-center`  |
 
