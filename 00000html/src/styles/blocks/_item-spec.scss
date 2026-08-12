@@ -1,0 +1,72 @@
+// 内容量・価格などの商品スペック
+.p00000-item-spec {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 13px;
+  text-align: left;
+  border-color: #666;
+  border-style: dashed;
+  border-width: 2px 0 0;
+
+  @media (width >= 640px) {
+    font-size: 14px;
+  }
+}
+
+// 縦並び版の行
+.p00000-item-spec__row {
+  display: flex;
+  gap: 0.25em;
+  padding: 4px 0;
+  border-color: #666;
+  border-style: dashed;
+  border-width: 0 0 2px;
+}
+
+// 項目名「内容量 :」のようにコロンを付与
+.p00000-item-spec__term {
+  margin: 0;
+  font-weight: inherit;
+
+  &::after {
+    content: ' :';
+  }
+}
+
+.p00000-item-spec__value {
+  margin: 0;
+}
+
+// PC で横並び（SP は縦並びのまま。行数は 2 件以上に対応）
+.p00000-item-spec--horizontal {
+  @media (width >= 640px) {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+
+    .p00000-item-spec__row {
+      align-items: start;
+      padding: 4px 12px;
+      border-width: 0 0 2px;
+    }
+  }
+}
+
+// 横並び版の列。先頭列の後に「／」を表示
+.p00000-item-spec__row--cell {
+  @media (width >= 640px) {
+    padding-left: 0;
+
+    &:not(:last-child) {
+      padding-right: 0;
+      padding-left: 0.25em;
+
+      &::after {
+        content: '／';
+      }
+    }
+  }
+}

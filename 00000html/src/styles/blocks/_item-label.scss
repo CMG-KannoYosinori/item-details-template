@@ -1,0 +1,15 @@
+// 医薬部外品などの商品区分ラベル
+.p00000-item-label {
+  display: block;
+  width: fit-content;
+  padding: 2px 8px;
+  margin: 0 auto;
+  font-size: 11px;
+  line-height: 1;
+  color: #666;
+  border: 1px solid #999;
+
+  @media (width >= 640px) {
+    font-size: 12px;
+  }
+}

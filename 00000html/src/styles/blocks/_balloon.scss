@@ -1,0 +1,32 @@
+// Component: 下向き三角付きのキャッチコピーバルーン
+.p00000-balloon {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  padding: 8px 16px;
+  margin: 0 auto 12px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  background-color: #0f55bd;
+  border-radius: 4px;
+
+  @media (width >= 640px) {
+    font-size: 16px;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    content: '';
+    border-color: #0f55bd transparent transparent;
+    border-style: solid;
+    border-width: 8px 8px 0;
+    transform: translateX(-50%);
+  }
+}

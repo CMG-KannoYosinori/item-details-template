@@ -147,30 +147,6 @@
   font-size: 12px;
 }
 
-.p00000-line-up__card-detail {
-  display: grid;
-  width: fit-content;
-  margin-top: 2rem;
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 13px;
-  text-align: left;
-  border-color: #666;
-  border-style: dashed;
-  border-width: 2px 0 0;
-
-  @media (width >= 640px) {
-    font-size: 14px;
-  }
-
-  li {
-    padding: 4px 0;
-    border-color: #666;
-    border-style: dashed;
-    border-width: 0 0 2px;
-  }
-}
-
 .p00000-line-up__card-accordion {
   margin-top: 2rem;
   margin-right: auto;

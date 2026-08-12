@@ -1,0 +1,35 @@
+@use 'sass:meta';
+
+@include meta.load-css('foundation/font-family');
+
+.p00000 {
+  box-sizing: border-box;
+  max-width: 640px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include meta.load-css('foundation/base');
+  @include meta.load-css('layout/container');
+  @include meta.load-css('layout/typography');
+  @include meta.load-css('layout/visibility');
+  @include meta.load-css('blocks/accordion');
+  @include meta.load-css('blocks/allergy');
+  @include meta.load-css('blocks/banner');
+  @include meta.load-css('blocks/balloon');
+  @include meta.load-css('blocks/box');
+  @include meta.load-css('blocks/button');
+  @include meta.load-css('blocks/item-label');
+  @include meta.load-css('blocks/item-spec');
+  @include meta.load-css('blocks/cta-x');
+  @include meta.load-css('blocks/heading');
+  @include meta.load-css('blocks/line-up');
+  @include meta.load-css('blocks/main');
+  @include meta.load-css('blocks/section');
+  @include meta.load-css('blocks/youtube');
+  @include meta.load-css('layout/spacing');
+
+  .bootstrap-v3-3-7--scope & a:focus {
+    outline: unset;
+    outline-offset: unset;
+  }
+}

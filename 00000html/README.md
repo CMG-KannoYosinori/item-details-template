@@ -53,7 +53,7 @@
 
 ```json
 "savePath": "/15403html/dist/styles",
-"includeItems": ["/15403html/src/styles/main.scss"]
+"includeItems": ["/15403html/src/styles/style.scss"]
 ```
 
 `15403html/.vscode/settings.json` だけを使う場合は、パスにプロジェクト ID が含まれていないため変更不要です。
@@ -72,9 +72,9 @@
 │       └── style.css     # SCSS のコンパイル結果（直接編集しない）
 ├── src/
 │   └── styles/           # SCSS ソース（Modern BEM）
-│       ├── main.scss     # エントリポイント
+│       ├── style.scss    # エントリポイント
 │       ├── foundation/   # リセット・フォントなど土台
-│       ├── layout/       # 配置・表示切替・タイポヘルパー
+│       ├── layout/       # 配置・表示切替・タイポ・余白ユーティリティ
 │       └── blocks/       # UI Block（1 ファイル = 1 Block）
 └── .vscode/              # Live Sass / Live Server 設定
 ```
@@ -84,7 +84,7 @@
 | `foundation/`   | リセット、フォント読み込みなど Block に属さない共通基盤      |
 | `layout/`       | 余白コンテナ、表示切替、フォント指定などコンテキスト依存     |
 | `blocks/`       | UI コンポーネント（Block）。Element / Modifier も同ファイル内 |
-| `main.scss`     | 上記を `@import` する入口                                    |
+| `style.scss`    | 上記を読み込む入口                                           |
 
 ---
 
@@ -103,7 +103,7 @@
 
 ### どこを編集するか
 
-- **案件ごとの Block を追加・変更** → `blocks/` に `_block名.scss` を追加し、`main.scss` で `@import` する
+- **案件ごとの Block を追加・変更** → `blocks/` に `_block名.scss` を追加し、`style.scss` で読み込む
 - **余白コンテナ・表示切替・フォント指定** → `layout/` を使う
 - **共通 Block として再利用したい** → `blocks/` に切り出す（ファイル名 = Block 名）
 
@@ -116,10 +116,17 @@
 | `p00000-main` | 商品詳細ページのルート |
 | `p00000-section` | セクション Block |
 | `p00000-container` | 余白コンテナ（Layout） |
+| `p00000-mt-4` / `p00000-mt-8` | 上余白ユーティリティ（Layout） |
 | `p00000-box` | 白ボックス |
 | `p00000-heading` | 共通見出し |
 | `p00000-banner` / `p00000-banner__item` | バナー |
+| `p00000-balloon` | 下向き三角付きのキャッチコピーバルーン |
 | `p00000-line-up` | 商品ラインナップ |
+| `p00000-item-label` | 医薬部外品などの商品区分ラベル |
+| `p00000-item-spec` | 内容量・価格などの商品スペック（`dl` / `dt` / `dd`） |
+| `p00000-item-spec--horizontal` | 上記の PC 横並び版（640px 以上で flex 横並び） |
+| `p00000-item-spec__row--cell` | 横並び版の行（`--horizontal` と併用） |
+| `p00000-item-spec__term--slash` | 項目名の後に `／` を表示（横並び版で使用） |
 | `p00000-button` | 共通ボタン |
 | `p00000-font-noto-serif-jp` など | フォント指定（Layout） |
 | `p00000-hidden` / `pc:p00000-hidden` | 表示切替（Layout） |
@@ -141,7 +148,7 @@
 出力先は `.vscode/settings.json` で指定済みです。
 
 ```
-src/styles/main.scss  →  dist/styles/style.css
+src/styles/style.scss  →  dist/styles/style.css
 ```
 
 > `src/styles/` 直下に `.css` が生成された場合は、設定が効いていません。Watch を止め、リポジトリ／フォルダの開き方と `.vscode/settings.json` を確認してください。

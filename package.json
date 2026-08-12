@@ -8,13 +8,13 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:sass": "sass --no-source-map --watch 00000html/src/styles/main.scss:00000html/dist/styles/style.css",
+    "watch:sass": "sass --no-source-map --watch 00000html/src/styles/style.scss:00000html/dist/styles/style.css",
     "watch": "npm run watch:sass",
     "format:eslint": "eslint 00000html/dist/**/*.js --fix",
     "format:prettier": "prettier --write 00000html/dist/**/*.js",
     "format:stylelint:sass": "stylelint '00000html/src/**/*.scss' --fix",
     "format": "npm run format:eslint && npm run format:prettier && npm run format:stylelint:sass",
-    "build:sass": "sass --no-source-map 00000html/src/styles/main.scss 00000html/dist/styles/style.css",
+    "build:sass": "sass --no-source-map 00000html/src/styles/style.scss 00000html/dist/styles/style.css",
     "build": "npm run format && npm run build:sass"
   },
   "author": "",

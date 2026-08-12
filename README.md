@@ -43,8 +43,8 @@ npm run format  # ESLint / Prettier / Stylelint
 
 | スクリプト | 用途 |
 | ---------- | ---- |
-| `watch` / `watch:sass` | `00000html/src/styles/main.scss` → `00000html/dist/styles/style.css` を監視コンパイル |
-| `build:sass` | `main.scss` から `style.css` へ一回ビルド |
+| `watch` / `watch:sass` | `00000html/src/styles/style.scss` → `00000html/dist/styles/style.css` を監視コンパイル |
+| `build:sass` | `style.scss` から `style.css` へ一回ビルド |
 | `build` | `format` のあと `build:sass` |
 | `format` | JS / SCSS の整形（Stylelint 含む） |
 | `format:stylelint:sass` | SCSS のみ。プロパティ順は [stylelint-config-recess-order](https://github.com/stormwarning/stylelint-config-recess-order)（配置 → ボックスモデル → タイポグラフィ → 背景・ボーダー） |
