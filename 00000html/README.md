@@ -53,7 +53,7 @@
 
 ## 2. ディレクトリ構成（チームが使う範囲）
 
-SCSS の置き場所は [Modern BEM コーディング規約 (Draft)](https://github.com/YoshinoriKanno/doc-modern-bem) の `foundation` / `layout` / `blocks` 構成に準拠しています。規約上の `main.scss` にあたる入口は、本テンプレートでは Live Sass 向けに **`style.scss`** です。
+SCSS の置き場所は [Modern BEM コーディング規約 (Draft)](https://github.com/YoshinoriKanno/doc-modern-bem) の `foundation` / `layout` / `blocks` / `pages` 構成に準拠しています。規約上の `main.scss` にあたる入口は、本テンプレートでは Live Sass 向けに **`style.scss`** です。
 
 ```
 00000html/
@@ -68,7 +68,8 @@ SCSS の置き場所は [Modern BEM コーディング規約 (Draft)](https://gi
 │       ├── style.scss    # エントリポイント（規約の main.scss 相当）
 │       ├── foundation/   # リセット・フォントなど（Block ではない）
 │       ├── layout/       # 余白・配置などコンテキスト依存
-│       └── blocks/       # UI Block（1 ファイル = 1 Block）
+│       ├── blocks/       # 再利用する UI Block（1 ファイル = 1 Block）
+│       └── pages/        # この案件（ページ）専用の Block
 └── .vscode/              # Live Sass / Live Server 設定
 ```
 
@@ -76,10 +77,11 @@ SCSS の置き場所は [Modern BEM コーディング規約 (Draft)](https://gi
 | ------------- | ---- |
 | `foundation/` | リセット、フォント読み込みなど、BEM の階層に属さない共通基盤 |
 | `layout/`     | 外側の余白や配置など、コンテキスト依存のスタイル専用（本テンプレでは container / spacing / visibility / typography） |
-| `blocks/`     | UI コンポーネント（Block）。1 ファイル = 1 Block。Element / Modifier / State も同ファイル内 |
+| `blocks/`     | 再利用する UI コンポーネント（Block）。1 ファイル = 1 Block。Element / Modifier / State も同ファイル内 |
+| `pages/`      | この案件専用の組み立て用 Block。本テンプレでは `_project.scss`（`.p00000-project`） |
 | `style.scss`  | 上記を読み込むエントリポイント |
 
-> Element 単位やページ単位でファイルを切らない。親から子 Block を直接スタイリングする置き場も作らない。詳細は上記規約を参照。
+> Element 単位でファイルを切らない。`pages/` に他 Block の定義を同居させない。親から子 Block を直接スタイリングする置き場も作らない。詳細は上記規約を参照。
 
 ---
 
@@ -98,17 +100,19 @@ SCSS の置き場所は [Modern BEM コーディング規約 (Draft)](https://gi
 
 ### どこを編集するか
 
-- **案件ごとの Block を追加・変更** → `blocks/` に `_block名.scss` を追加し、`style.scss` で読み込む
+- **再利用する UI を追加・変更** → `blocks/` に `_block名.scss` を追加し、`style.scss` で読み込む
+- **この案件だけの構成・余白・配置** → `pages/_project.scss`（`.p00000-project` / Element）に書く
 - **余白コンテナ・表示切替・フォント指定** → `layout/` を使う
-- **共通 Block として再利用したい** → `blocks/` に切り出す（ファイル名 = Block 名）
+- **共通 Block として切り出せそうな UI** → `pages/` ではなく `blocks/` に置く
 
-> Block 同士を親から直接スタイリングしない（例: `.line-up .button { }` は不可）。配置用 Element（`__card-action` など）を Block 内に用意する。
+> Block 同士を親から直接スタイリングしない（例: `.p00000-project .p00000-button { }` は不可）。配置用 Element（`p00000-project__section` や `line-up__card-action` など）に余白を持たせる。
 
-### 主な Block / Layout クラス
+### 主な Block / Layout / Page クラス
 
 | クラス | 用途 |
 | ------ | ---- |
-| `p00000-main` | 商品詳細ページのルート |
+| `p00000-main` | 商品詳細ページの共通シェル（フォント・枠など） |
+| `p00000-project` | この案件専用のページ Block（`pages/_project.scss`） |
 | `p00000-section` | セクション Block |
 | `p00000-delivering-items` | 今回お届けする商品一覧 |
 | `p00000-line-up` | 商品ラインナップ |
@@ -180,7 +184,7 @@ src/styles/style.scss  →  dist/styles/style.css
 3. [ ] フォルダ名・HTML ファイル名をリネームする
 4. [ ] Watch Sass を開始する（`00000html/.vscode` のパスはプロジェクト ID を含まないため変更不要）
 5. [ ] Live Server で `dist/*.html` を開く
-6. [ ] `dist/*.html` と `src/styles/blocks/` を中心にコーディングする
+6. [ ] `dist/*.html` と `src/styles/blocks/`・`src/styles/pages/` を中心にコーディングする
 7. [ ] 画像は `dist/images/`（または CDN パス）に配置する
 8. [ ] 公開前に CSS のリンク先（ローカル / CDN）を確認する
 
@@ -189,14 +193,16 @@ src/styles/style.scss  →  dist/styles/style.css
 ## 6. マークアップの例
 
 ```html
-<section class="p00000-section p00000-section--1">
-  <div class="p00000-container">
-    <div class="p00000-box">
-      <h3 class="p00000-heading">見出し</h3>
-      <p class="p00000-font-noto-serif-jp">明朝体のテキスト</p>
+<article class="p00000-main p00000-project">
+  <section class="p00000-section p00000-section--1">
+    <div class="p00000-container">
+      <div class="p00000-box">
+        <h3 class="p00000-heading">見出し</h3>
+        <p class="p00000-font-noto-serif-jp">明朝体のテキスト</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</article>
 ```
 
 ### ぶら下がりインデント（ご注意点など）

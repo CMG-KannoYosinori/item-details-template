@@ -1,6 +1,6 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&display=swap");
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&display=swap';
 .p00000 {
   box-sizing: border-box;
   max-width: 640px;
@@ -582,9 +582,9 @@
 }
 .p00000 .p00000-delivering-items__item-visual {
   position: relative;
+  max-width: 68px;
   margin-right: auto;
   margin-left: auto;
-  max-width: 68px;
 }
 @media (width >= 375px) {
   .p00000 .p00000-delivering-items__item-visual {

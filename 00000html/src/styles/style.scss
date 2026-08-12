@@ -26,6 +26,7 @@
   @include meta.load-css('blocks/main');
   @include meta.load-css('blocks/section');
   @include meta.load-css('blocks/youtube');
+  @include meta.load-css('pages/project');
   @include meta.load-css('layout/spacing');
 
   .bootstrap-v3-3-7--scope & a:focus {

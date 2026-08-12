@@ -1,0 +1,12 @@
+// この案件（ページ）専用の組み立て用 Block。
+// 再利用 UI は blocks/ に置き、ここにはページ固有の構成・余白・配置だけを書く。
+// 他 Block（.p00000-button など）をここから直接上書きしない。
+//
+// 例:
+// .p00000-project__feature {}
+// .p00000-project__recipes {}
+// .p00000-project__comments {}
+
+.p00000-project {
+  // 案件固有のルート調整があればここに書く
+}
