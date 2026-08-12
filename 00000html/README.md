@@ -107,6 +107,65 @@ SCSS の置き場所は [Modern BEM コーディング規約 (Draft)](https://gi
 
 > Block 同士を親から直接スタイリングしない（例: `.p00000-project .p00000-button { }` は不可）。配置用 Element（`p00000-project__section` や `line-up__card-action` など）に余白を持たせる。
 
+### pages/_project.scss の書き方
+
+案件専用スタイルは `pages/_project.scss` にまとめます。
+
+#### まず読む
+
+- ボタン・見出し・商品一覧など「他の案件でも使いそうな部品」→ `blocks/` にファイルを分ける（例: `_button.scss`）
+- 「この案件のこのページにしか出てこない」見出し帯・特集・レシピ枠など → `pages/_project.scss` に書く
+
+#### 書き方の基本
+
+1. HTML の `<article class="p00000-main p00000-project">` が土台
+2. セクションごとに Element クラスを付ける（アンダースコア 2 つ `__`）
+3. スタイルは `.p00000-project__名前` に書く（このファイル内で完結）
+
+HTML 例:
+
+```html
+<div class="p00000-project__feature">...</div>
+<div class="p00000-project__recipes">...</div>
+<div class="p00000-project__comments">...</div>
+```
+
+SCSS 例（`pages/_project.scss` に追加していく）:
+
+```scss
+.p00000-project__feature {
+  /* ... */
+}
+.p00000-project__recipes {
+  /* ... */
+}
+.p00000-project__comments {
+  /* ... */
+}
+```
+
+#### やってはいけないこと
+
+他の部品をここから直接いじらない。
+
+```scss
+/* NG */
+.p00000-project .p00000-button {
+  margin-top: 24px;
+}
+
+/* OK: 余白用の枠（Element）を用意する */
+.p00000-project__action {
+  margin-top: 24px;
+}
+```
+
+```html
+<div class="p00000-project__action">...</div>
+```
+
+`.p00000-feature` のように `project` を外した別名をこのファイルに増やさない（1 ファイル = 1 Block。`.p00000-project` とその `__` 要素だけにする）。
+
 ### 主な Block / Layout / Page クラス
 
 | クラス | 用途 |
