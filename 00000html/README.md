@@ -234,6 +234,30 @@ src/styles/style.scss  →  dist/styles/style.css
 <link href="https://image.moratame.net/images/detail/15403/styles/style.css" rel="stylesheet" type="text/css" />
 ```
 
+### アコーディオン（使う場合）
+
+`p00000-accordion-details` を使う場合は、JS も CSS と同様にローカル / CDN の切り替えが必要です。
+
+1. `dist/scripts/accordion.2.js` を本番の画像サーバへアップロードする  
+   （例: `https://image.moratame.net/images/detail/15403/scripts/accordion.2.js`）
+2. HTML 末尾付近の script を、開発用ローカルから CDN へ切り替える
+
+開発中（ローカル）:
+
+```html
+<script src="./scripts/accordion.2.js"></script>
+<!-- <script src="https://image.moratame.net/images/detail/15403/scripts/accordion.2.js"></script> -->
+```
+
+公開時（CDN）:
+
+```html
+<!-- <script src="./scripts/accordion.2.js"></script> -->
+<script src="https://image.moratame.net/images/detail/15403/scripts/accordion.2.js"></script>
+```
+
+> アコーディオンを使わない案件では、該当の HTML・script タグを削除して構いません。一括置換後は URL 内のプロジェクト ID も確認してください。
+
 ---
 
 ## 5. 作業の流れ（チェックリスト）
@@ -246,6 +270,7 @@ src/styles/style.scss  →  dist/styles/style.css
 6. [ ] `dist/*.html` と `src/styles/blocks/`・`src/styles/pages/` を中心にコーディングする
 7. [ ] 画像は `dist/images/`（または CDN パス）に配置する
 8. [ ] 公開前に CSS のリンク先（ローカル / CDN）を確認する
+9. [ ] アコーディオン利用時は `accordion.2.js` をアップロードし、script のコメントを切り替える
 
 ---
 
