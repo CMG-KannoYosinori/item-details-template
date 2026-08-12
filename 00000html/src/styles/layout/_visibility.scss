@@ -1,0 +1,15 @@
+.p00000-hidden {
+  display: none;
+}
+
+.pc\:p00000-hidden {
+  @media (width >= 640px) {
+    display: none;
+  }
+}
+
+.pc\:p00000-inline {
+  @media (width >= 640px) {
+    display: inline;
+  }
+}

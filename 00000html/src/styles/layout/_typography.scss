@@ -1,0 +1,48 @@
+.p00000-font-noto-serif-jp {
+  font-family: 'Noto Serif JP', serif;
+}
+
+.p00000-font-m-plus-rounded-1c {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.p00000-text-center {
+  text-align: center;
+}
+
+.p00000-sup {
+  position: relative;
+  top: -1em;
+  font-size: 0.5em;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+.p00000-indent {
+  margin: 0;
+
+  &.p00000-indent--07 {
+    padding-left: 0.7em;
+    text-indent: -0.7em;
+  }
+
+  &.p00000-indent--10 {
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+
+  &.p00000-indent--11 {
+    padding-left: 1.1em;
+    text-indent: -1.1em;
+  }
+
+  &.p00000-indent--19 {
+    padding-left: 1.9em;
+    text-indent: -1.9em;
+  }
+
+  &.p00000-indent--22 {
+    padding-left: 2.2em;
+    text-indent: -2.2em;
+  }
+}

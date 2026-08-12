@@ -17,8 +17,8 @@ alwaysApply: true
 ### `00000html/README.md`（チーム向け）
 
 - セットアップ手順（一括置換、フォルダ名、Live Sass パスなど）の変更
-- ディレクトリ構成や FLOCSS の置き場所の変更
-- クラス命名規則（`c-` / `p-` / `l-` / `u-`）の追加・変更
+- ディレクトリ構成や Modern BEM（foundation / layout / blocks）の置き場所の変更
+- クラス命名規則（Block / Element / Modifier）の追加・変更
 - 開発フロー（Live Sass、Live Server）の変更
 - マークアップ例やチェックリストの追加・修正
 - ファイルの追加・削除で、ドキュメント上の説明と実態がずれたとき

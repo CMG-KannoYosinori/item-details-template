@@ -1,5 +1,5 @@
 // Component: アレルギー情報ボックス
-.p00000-c-allergy {
+.p00000-allergy {
   margin-top: 32px;
   font-size: 12px;
   line-height: 1.625;
@@ -10,7 +10,7 @@
   }
 }
 
-.p00000-c-allergy__heading {
+.p00000-allergy__heading {
   padding: 4px 24px;
   margin: 0;
   font-size: 12px;
@@ -22,7 +22,7 @@
   border-radius: 4px 4px 0 0;
 }
 
-.p00000-c-allergy__body {
+.p00000-allergy__body {
   padding: 0 12px 12px;
   border-color: red;
   border-style: solid;
@@ -30,7 +30,7 @@
   border-radius: 0 0 4px 4px;
 }
 
-.p00000-c-allergy__list {
+.p00000-allergy__list {
   display: flex;
   gap: 12px;
   justify-content: center;
@@ -39,7 +39,7 @@
   text-align: center;
 }
 
-.p00000-c-allergy__note {
+.p00000-allergy__note {
   padding-left: 1em;
   margin: 4px 0 0;
   font-size: 12px;

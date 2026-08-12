@@ -10,7 +10,7 @@
   ],
   "liveSassCompile.settings.generateMap": false,
   "liveSassCompile.settings.includeItems": [
-    "/src/styles/style.scss"
+    "/src/styles/main.scss"
   ],
   "liveSassCompile.settings.excludeList": [
     "**/node_modules/**",

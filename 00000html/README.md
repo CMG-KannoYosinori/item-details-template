@@ -5,7 +5,7 @@
 **チームが触るのは次だけです。**
 
 - `dist/` … HTML・画像・スクリプト・コンパイル済み CSS（納品・プレビュー）
-- `src/` … SCSS ソース（FLOCSS）
+- `src/` … SCSS ソース（Modern BEM）
 
 開発は **Live Sass Compiler** と **Live Server** だけで行います。`npm` は不要です。
 
@@ -54,7 +54,7 @@
 
 ```json
 "savePath": "/15403html/dist/styles",
-"includeItems": ["/15403html/src/styles/style.scss"]
+"includeItems": ["/15403html/src/styles/main.scss"]
 ```
 
 `15403html/.vscode/settings.json` だけを使う場合は、パスにプロジェクト ID が含まれていないため変更不要です。
@@ -72,38 +72,56 @@
 │   └── styles/
 │       └── style.css     # SCSS のコンパイル結果（直接編集しない）
 ├── src/
-│   └── styles/           # SCSS ソース（FLOCSS）
-│       ├── style.scss    # エントリポイント
+│   └── styles/           # SCSS ソース（Modern BEM）
+│       ├── main.scss     # エントリポイント
 │       ├── foundation/   # リセット・フォントなど土台
-│       ├── layout/       # レイアウト（余白コンテナなど）
-│       └── object/
-│           ├── component/  # 再利用 UI（c-）
-│           ├── project/    # 案件固有（p-）※主にここを編集
-│           └── utility/    # ユーティリティ（u-）
+│       ├── layout/       # 配置・表示切替・タイポヘルパー
+│       └── blocks/       # UI Block（1 ファイル = 1 Block）
 └── .vscode/              # Live Sass / Live Server 設定
 ```
 
+| ディレクトリ    | 役割                                                         |
+| --------------- | ------------------------------------------------------------ |
+| `foundation/`   | リセット、フォント読み込みなど Block に属さない共通基盤      |
+| `layout/`       | 余白コンテナ、表示切替、フォント指定などコンテキスト依存     |
+| `blocks/`       | UI コンポーネント（Block）。Element / Modifier も同ファイル内 |
+| `main.scss`     | 上記を `@import` する入口                                    |
+
 ---
 
-## 3. FLOCSS とクラス命名
+## 3. Modern BEM とクラス命名
 
-プレフィックス `p00000`（置換後は `p15403` など）は、サイト全体 CSS との衝突回避用です。
+プレフィックス `p00000`（置換後は `p15403` など）は、サイト全体 CSS との衝突回避用です。Block 名の前に付けます。
 
-| 層         | 接頭辞 | 置くもの                     | 例                                                                                         |
-| ---------- | ------ | ---------------------------- | ------------------------------------------------------------------------------------------ |
-| Foundation | —      | フォント読み込み、ベース     | `foundation/_font-family.scss`                                                             |
-| Layout     | `l-`   | 余白・幅などのレイアウト     | `p00000-l-container`                                                                       |
-| Component  | `c-`   | 再利用できる UI 部品         | `p00000-c-box`, `p00000-c-heading`, `p00000-c-allergy`, `p00000-c-banner`, `p00000-c-button`, `p00000-c-youtube` |
-| Project    | `p-`   | その商品ページ固有のブロック | `p00000-p-main`, `p00000-p-section`                                                        |
-| Utility    | `u-`   | 単機能ヘルパー               | `p00000-u-font-noto-serif-jp`, `p00000-u-text-center`                                      |
+| 種類         | 命名規則                         | 例                                           |
+| ------------ | -------------------------------- | -------------------------------------------- |
+| **Block**    | `p00000-{block}`                 | `p00000-box`, `p00000-section`               |
+| **Element**  | Block 名 + `__` + 要素名         | `p00000-allergy__heading`                    |
+| **Modifier** | Block / Element + `--` + 修飾    | `p00000-section--1`, `p00000-indent--11`     |
+| **State**    | `is-*` または `data-*`（動的）   | `is-open`（必要時）                          |
 
 ### どこを編集するか
 
-- **案件ごとの見た目・構成** → `object/project/_project.scss` を中心に編集
-- **Project 層のパーシャルを増やす** → ファイルを `object/project/` に追加し、`style.scss` で `@import` する（Component と同じ）
-- **共通部品として再利用したい** → `object/component/` に切り出す
-- **余白だけ欲しい** → `p00000-l-container` など Layout を使う
-- **フォント指定だけ** → Utility クラスを HTML に付与
+- **案件ごとの Block を追加・変更** → `blocks/` に `_block名.scss` を追加し、`main.scss` で `@import` する
+- **余白コンテナ・表示切替・フォント指定** → `layout/` を使う
+- **共通 Block として再利用したい** → `blocks/` に切り出す（ファイル名 = Block 名）
+
+> Block 同士を親から直接スタイリングしない（例: `.line-up .button { }` は不可）。配置用 Element（`__card-action` など）を Block 内に用意する。
+
+### 主な Block / Layout クラス
+
+| クラス | 用途 |
+| ------ | ---- |
+| `p00000-main` | 商品詳細ページのルート |
+| `p00000-section` | セクション Block |
+| `p00000-container` | 余白コンテナ（Layout） |
+| `p00000-box` | 白ボックス |
+| `p00000-heading` | 共通見出し |
+| `p00000-banner` / `p00000-banner__item` | バナー |
+| `p00000-line-up` | 商品ラインナップ |
+| `p00000-button` | 共通ボタン |
+| `p00000-font-noto-serif-jp` など | フォント指定（Layout） |
+| `p00000-hidden` / `pc:p00000-hidden` | 表示切替（Layout） |
 
 ---
 
@@ -122,7 +140,7 @@
 出力先は `.vscode/settings.json` で指定済みです。
 
 ```
-src/styles/style.scss  →  dist/styles/style.css
+src/styles/main.scss  →  dist/styles/style.css
 ```
 
 > `src/styles/` 直下に `.css` が生成された場合は、設定が効いていません。Watch を止め、リポジトリ／フォルダの開き方と `.vscode/settings.json` を確認してください。
@@ -153,7 +171,7 @@ src/styles/style.scss  →  dist/styles/style.css
 4. [ ] `.vscode` の Live Sass パスを必要に応じて更新する
 5. [ ] Watch Sass を開始する
 6. [ ] Live Server で `dist/*.html` を開く
-7. [ ] `dist/*.html` と `src/styles/object/project/` を中心にコーディングする
+7. [ ] `dist/*.html` と `src/styles/blocks/` を中心にコーディングする
 8. [ ] 画像は `dist/images/`（または CDN パス）に配置する
 9. [ ] 公開前に CSS のリンク先（ローカル / CDN）を確認する
 
@@ -162,50 +180,42 @@ src/styles/style.scss  →  dist/styles/style.css
 ## 6. マークアップの例
 
 ```html
-<section class="p00000-p-section p00000-p-section--1">
-  <div class="p00000-l-container">
-    <div class="p00000-c-box">
-      <h3 class="p00000-c-heading">見出し</h3>
-      <p class="p00000-u-font-noto-serif-jp">明朝体のテキスト</p>
+<section class="p00000-section p00000-section--1">
+  <div class="p00000-container">
+    <div class="p00000-box">
+      <h3 class="p00000-heading">見出し</h3>
+      <p class="p00000-font-noto-serif-jp">明朝体のテキスト</p>
     </div>
   </div>
 </section>
 ```
-
-- `p-section` … セクション（Project）
-- `l-container` … 余白コンテナ（Layout）
-- `c-box` … 白ボックス（Component）
-- `c-heading` … 共通見出し（Component）
-- `c-banner` … バナーブロック（Component）
-- `u-font-*` … フォント指定（Utility）
-- `u-text-center` … 中央寄せ（Utility）
 
 ### ぶら下がりインデント（ご注意点など）
 
 先頭記号（・ ※ ● など）を 1 文字分、番号付き（※1 ＊1 など）を 2 文字分ずらします。
 
 ```html
-<p class="p00000-u-indent p00000-u-indent--11">※すべての菌を取り除くわけではありません。</p>
-<p class="p00000-u-indent p00000-u-indent--07">・1日の摂取目安量を守ってください。</p>
-<p class="p00000-u-indent p00000-u-indent--11">●乳幼児・小児の手の届かない所に置いてください。</p>
-<p class="p00000-u-indent p00000-u-indent--22">※1 食物アレルギーの方は原材料名をご確認ください。</p>
-<p class="p00000-u-indent p00000-u-indent--19">＊1 原材料の特性により色等が変化することがあります。</p>
+<p class="p00000-indent p00000-indent--11">※すべての菌を取り除くわけではありません。</p>
+<p class="p00000-indent p00000-indent--07">・1日の摂取目安量を守ってください。</p>
+<p class="p00000-indent p00000-indent--11">●乳幼児・小児の手の届かない所に置いてください。</p>
+<p class="p00000-indent p00000-indent--22">※1 食物アレルギーの方は原材料名をご確認ください。</p>
+<p class="p00000-indent p00000-indent--19">＊1 原材料の特性により色等が変化することがあります。</p>
 ```
 
 | クラス | 用途 |
 |--------|------|
-| `p00000-u-indent` | ぶら下がりインデントのベース（必須） |
-| `p00000-u-indent--07` | 0.7em（・ など） |
-| `p00000-u-indent--10` | 1em |
-| `p00000-u-indent--11` | 1.1em（※ ● など） |
-| `p00000-u-indent--19` | 1.9em（＊1 など） |
-| `p00000-u-indent--22` | 2.2em（※1 など） |
+| `p00000-indent` | ぶら下がりインデントのベース（必須） |
+| `p00000-indent--07` | 0.7em（・ など） |
+| `p00000-indent--10` | 1em |
+| `p00000-indent--11` | 1.1em（※ ● など） |
+| `p00000-indent--19` | 1.9em（＊1 など） |
+| `p00000-indent--22` | 2.2em（※1 など） |
 
 ### 文中の上付き注釈（米印など）
 
 ```html
-<p>除菌<sup class="p00000-u-sup">※</sup>し、新たなニオイの発生を防ぎます。</p>
-<p class="p00000-u-indent p00000-u-indent--11">※すべての菌を取り除くわけではありません。</p>
+<p>除菌<sup class="p00000-sup">※</sup>し、新たなニオイの発生を防ぎます。</p>
+<p class="p00000-indent p00000-indent--11">※すべての菌を取り除くわけではありません。</p>
 ```
 
 ---
