@@ -190,7 +190,8 @@ SCSS 例（`pages/_project.scss` に追加していく）:
 | `p00000-cta-x` | X（旧 Twitter）投稿 CTA |
 | `p00000-button` | 共通ボタン |
 | `p00000-container` | 余白コンテナ（Layout） |
-| `p00000-mt-2` / `p00000-mt-4` / `p00000-mt-8` | 上余白ユーティリティ（Layout） |
+| `p00000-mt-2` / `p00000-mt-4` / `p00000-mt-8` など | 余白ユーティリティ（Layout・Tailwind 風）。`m` / `p` + 方向（`t` `r` `b` `l` `x` `y`）+ サイズ（`2`=`0.5rem` / `4`=`1rem` / `8`=`2rem`） |
+
 | `p00000-font-noto-serif-jp` など | フォント指定（Layout） |
 | `p00000-hidden` / `pc:p00000-hidden` | 表示切替（Layout） |
 
