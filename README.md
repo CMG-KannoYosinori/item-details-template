@@ -10,14 +10,32 @@
 
 1. GitHub リポジトリページで **Code → Download ZIP** を選ぶ
 2. ダウンロードした ZIP を解凍する
-3. 解凍したフォルダのうち **`00000html` だけ** を取り出し、案件用の作業場所へ置く
-4. `00000html` を開いて作業を始める
+3. 解凍フォルダのうち **残すのは `00000html` だけ**。それ以外は削除する（見通しをよくするため）
+4. `00000html` を案件用の作業場所へ移し、そのフォルダを開いて作業を始める
+
+### 残すもの（これ以外は削除）
+
+ZIP 解凍直後に残すのは次だけです。
+
+```
+00000html/
+├── README.md    # チーム向け手順（作業時はこちらを読む）
+├── dist/        # HTML・画像・スクリプト・コンパイル済み CSS
+├── src/         # SCSS ソース
+└── .vscode/     # Live Sass / Live Server 設定
+```
+
+削除してよい例（作成者・リポジトリ運用用）:
+
+- ルートの `README.md` / `package.json` / `package-lock.json`
+- `.github/` / `.cursor/` / ルートの `.vscode/`
+- `.prettierrc.json` / `.stylelintrc.json` / `eslint.config.mjs` / `.gitignore`
 
 詳細な手順（`00000` の一括置換、Live Sass / Live Server、命名規則など）は次を参照してください。
 
 → **[`00000html/README.md`](./00000html/README.md)**
 
-`npm` は不要です。触るのは `00000html/dist` と `00000html/src` だけです。
+`npm` は不要です。触るのは `00000html` 内の `dist/` と `src/` が中心です（設定は `.vscode/`）。
 
 ---
 

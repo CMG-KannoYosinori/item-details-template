@@ -1,13 +1,49 @@
 # 商品詳細ページ テンプレート（チーム向け）
 
-もらため商品詳細 HTML のテンプレートです。案件ごとにこのディレクトリをコピーし、プロジェクト ID に合わせて編集してください。
-
-**チームが触るのは次だけです。**
-
-- `dist/` … HTML・画像・スクリプト・コンパイル済み CSS（納品・プレビュー）
-- `src/` … SCSS ソース（Modern BEM）
+もらため商品詳細 HTML のテンプレートです。案件ごとにこのディレクトリを使い、プロジェクト ID に合わせて編集してください。
 
 開発は **Live Sass Compiler** と **Live Server** だけで行います。`npm` は不要です。
+
+---
+
+## 0. 入手と整理（ZIP）
+
+GitHub から ZIP をダウンロードして解凍したら、**作業に不要なものは削除**してから始めます（フォルダが見通しよくなります）。
+
+### 残すもの（これ以外は削除）
+
+リポジトリ直下に残すのは **`00000html` フォルダだけ** です。その中身は次を残します。
+
+```
+00000html/
+├── README.md    # 本ファイル（チーム向け手順）
+├── dist/        # HTML・画像・スクリプト・コンパイル済み CSS（納品・プレビュー）
+├── src/         # SCSS ソース（Modern BEM）
+└── .vscode/     # Live Sass / Live Server 設定
+```
+
+| 残すもの | 役割 |
+| -------- | ---- |
+| `README.md` | チーム向け手順 |
+| `dist/` | 編集・納品する成果物 |
+| `src/` | SCSS の編集元 |
+| `.vscode/` | Watch Sass / Live Server 用設定 |
+
+### 削除してよいもの（例）
+
+ZIP に含まれている次のようなものは **案件作業では使いません**。削除して構いません。
+
+- ルートの `README.md`（作成者向け）
+- `package.json` / `package-lock.json`（npm・作成者用）
+- `.github/` / `.cursor/` / ルートの `.vscode/`
+- `.prettierrc.json` / `.stylelintrc.json` / `eslint.config.mjs` / `.gitignore`
+
+整理後は `00000html`（またはリネーム後の `15403html` など）だけを VS Code / Cursor で開いて作業します。
+
+**チームが主に触るのは次です。**
+
+- `dist/` … HTML・画像・スクリプト・コンパイル済み CSS
+- `src/` … SCSS ソース
 
 ---
 
@@ -190,12 +226,51 @@ SCSS 例（`pages/_project.scss` に追加していく）:
 | `p00000-cta-x` | X（旧 Twitter）投稿 CTA |
 | `p00000-button` | 共通ボタン |
 | `p00000-container` | 余白コンテナ（Layout） |
-| `p00000-mt-2` / `p00000-mt-4` / `p00000-mt-8` など | 余白ユーティリティ（Layout・Tailwind 風）。`m` / `p` + 方向（`t` `r` `b` `l` `x` `y`）+ サイズ（`2`=`0.5rem` / `4`=`1rem` / `8`=`2rem`） |
-
+| `p00000-mt-2` など | 余白ユーティリティ（Layout・下表参照） |
 | `p00000-font-noto-serif-jp` など | フォント指定（Layout） |
 | `p00000-hidden` / `pc:p00000-hidden` | 表示切替（Layout） |
 
 > HTML に出てくる `p00000-detail-container` / `p00000-mv` はサイト側ラッパー用で、本テンプレの SCSS Block ではありません。
+
+### 余白ユーティリティ（layout/_spacing.scss）
+
+[Tailwind CSS](https://tailwindcss.com/docs/margin) 風の命名です。`layout/_spacing.scss` に定義されています。
+
+形式: `p00000-{種類}{方向?}-{サイズ}`
+
+| 種類 | 意味 |
+| ---- | ---- |
+| `m` | margin |
+| `p` | padding |
+
+| 方向 | 意味 |
+| ---- | ---- |
+| （なし） | 四方向 |
+| `x` | 左右 |
+| `y` | 上下 |
+| `t` | 上 |
+| `r` | 右 |
+| `b` | 下 |
+| `l` | 左 |
+
+| サイズ | 値 |
+| ------ | -- |
+| `2` | `0.5rem`（8px 相当） |
+| `4` | `1rem`（16px 相当） |
+| `8` | `2rem`（32px 相当） |
+
+例:
+
+```html
+<p class="p00000-item-label p00000-mt-2">医薬部外品</p>
+<dl class="p00000-item-spec p00000-mt-8">...</dl>
+<div class="p00000-px-4 p00000-py-2">...</div>
+```
+
+利用可能なクラス（いずれも `p00000-` 付き）:
+
+- margin: `m-2/4/8` `mx-2/4/8` `my-2/4/8` `mt-2/4/8` `mr-2/4/8` `mb-2/4/8` `ml-2/4/8`
+- padding: `p-2/4/8` `px-2/4/8` `py-2/4/8` `pt-2/4/8` `pr-2/4/8` `pb-2/4/8` `pl-2/4/8`
 
 ---
 
@@ -263,7 +338,7 @@ src/styles/style.scss  →  dist/styles/style.css
 
 ## 5. 作業の流れ（チェックリスト）
 
-1. [ ] テンプレート（`00000html`）を作業場所に置く
+1. [ ] GitHub から ZIP を入手し、`00000html` 以外を削除して作業場所に置く
 2. [ ] `00000` → `XXXXX` を一括置換する（`p00000` も同時に `pXXXXX` になる）
 3. [ ] フォルダ名・HTML ファイル名をリネームする
 4. [ ] Watch Sass を開始する（`00000html/.vscode` のパスはプロジェクト ID を含まないため変更不要）
