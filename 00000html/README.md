@@ -294,6 +294,37 @@ src/styles/style.scss  →  dist/styles/style.css
 
 > `src/styles/` 直下に `.css` が生成された場合は、設定が効いていません。Watch を止め、リポジトリ／フォルダの開き方と `.vscode/settings.json` を確認してください。
 
+#### エントリファイル名を変える場合（例: `style.2.scss`）
+
+Live Sass は **すべての `.scss` を見るのではなく**、`.vscode/settings.json` の `includeItems` に書かれたファイルだけをコンパイルします。初期値は次のとおりです。
+
+```json
+"liveSassCompile.settings.includeItems": [
+  "/src/styles/style.scss"
+]
+```
+
+そのため `style.scss` を `style.2.scss` などにリネームしただけではコンパイルされません。次を揃えてください。
+
+1. **エントリのリネーム** … 例: `src/styles/style.scss` → `src/styles/style.2.scss`
+2. **`.vscode/settings.json` の更新**
+
+```json
+"liveSassCompile.settings.includeItems": [
+  "/src/styles/style.2.scss"
+]
+```
+
+3. **HTML の CSS パスを更新** … 出力は入力名に合わせて `dist/styles/style.2.css` になるため、`<link>` も合わせる
+
+```html
+<link href="./styles/style.2.css" rel="stylesheet" type="text/css" />
+```
+
+4. **Watch Sass を一度止めてから再度 Watch** する（設定変更を読み直す）
+
+通常の案件では **`style.scss` → `style.css` のまま** で問題ありません。ファイル名を変える必要があるときだけ、上記をセットで変更します。
+
 ### プレビュー（Live Server）
 
 1. Live Server で `dist/00000.html`（置換後は `dist/15403.html` など）を開く
