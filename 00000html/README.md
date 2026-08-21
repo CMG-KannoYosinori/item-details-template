@@ -4,6 +4,9 @@
 
 開発は **Live Sass Compiler** と **Live Server** だけで行います。`npm` は不要です。
 
+> **フロントエンド未経験の方へ**  
+> まず **[はじめてガイド（これだけでOK）](./はじめてガイド.md)** だけ読んで進めてください。本 README はくわしい説明用です。
+
 ---
 
 ## 0. 入手と整理（ZIP）
@@ -16,15 +19,17 @@ GitHub から ZIP をダウンロードして解凍したら、**作業に不要
 
 ```
 00000html/
-├── README.md    # 本ファイル（チーム向け手順）
-├── dist/        # HTML・画像・スクリプト・コンパイル済み CSS（納品・プレビュー）
-├── src/         # SCSS ソース（Modern BEM）
-└── .vscode/     # Live Sass / Live Server 設定
+├── はじめてガイド.md   # 未経験者向け（これだけでOK）
+├── README.md           # チーム向け手順（くわしい説明）
+├── dist/               # HTML・画像・スクリプト・コンパイル済み CSS（納品・プレビュー）
+├── src/                # SCSS ソース（Modern BEM）
+└── .vscode/            # Live Sass / Live Server 設定
 ```
 
 | 残すもの | 役割 |
 | -------- | ---- |
-| `README.md` | チーム向け手順 |
+| `はじめてガイド.md` | 未経験者向けの最短手順 |
+| `README.md` | チーム向けのくわしい手順 |
 | `dist/` | 編集・納品する成果物 |
 | `src/` | SCSS の編集元 |
 | `.vscode/` | Watch Sass / Live Server 用設定 |

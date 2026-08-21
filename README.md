@@ -19,10 +19,11 @@ ZIP 解凍直後に残すのは次だけです。
 
 ```
 00000html/
-├── README.md    # チーム向け手順（作業時はこちらを読む）
-├── dist/        # HTML・画像・スクリプト・コンパイル済み CSS
-├── src/         # SCSS ソース
-└── .vscode/     # Live Sass / Live Server 設定
+├── はじめてガイド.md  # 未経験者向け（これだけでOK）
+├── README.md          # チーム向け手順（くわしい説明）
+├── dist/              # HTML・画像・スクリプト・コンパイル済み CSS
+├── src/               # SCSS ソース
+└── .vscode/           # Live Sass / Live Server 設定
 ```
 
 削除してよい例（作成者・リポジトリ運用用）:
@@ -31,9 +32,10 @@ ZIP 解凍直後に残すのは次だけです。
 - `.github/` / `.cursor/` / ルートの `.vscode/`
 - `.prettierrc.json` / `.stylelintrc.json` / `eslint.config.mjs` / `.gitignore`
 
-詳細な手順（`00000` の一括置換、Live Sass / Live Server、命名規則など）は次を参照してください。
+作業の進め方:
 
-→ **[`00000html/README.md`](./00000html/README.md)**
+- **未経験の方** → [`00000html/はじめてガイド.md`](./00000html/はじめてガイド.md)（これだけでOK）
+- **くわしい手順** → [`00000html/README.md`](./00000html/README.md)
 
 `npm` は不要です。触るのは `00000html` 内の `dist/` と `src/` が中心です（設定は `.vscode/`）。
 
